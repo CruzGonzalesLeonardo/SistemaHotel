@@ -19,11 +19,13 @@ namespace CapaDePresentacion
         {
             InitializeComponent();
 
-            progressBar1.Visible = false;
-            
+            this.BackColor = System.Drawing.Color.Blue;
+            this.TransparencyKey = System.Drawing.Color.Blue;
+
             TituErrorUsuario.Visible = false;
             TituErrorContraseña.Visible = false;
             MovForm.EnableFormDrag(this, this);
+            MovForm.EnableFormDrag(this, PanelFondo);
             MovForm.EnableFormDrag(this, PictureHotel);
             MovForm.EnableFormDrag(this, Titulo);
             MovForm.EnableFormDrag(this, txtUsuario);
@@ -34,7 +36,7 @@ namespace CapaDePresentacion
         }
         private void FrLogin_Load(object sender, EventArgs e)
         {
-            
+
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -85,6 +87,7 @@ namespace CapaDePresentacion
                 System.Threading.Thread.Sleep(10);
             }
         }
+
     }
 
 

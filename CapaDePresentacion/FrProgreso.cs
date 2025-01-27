@@ -13,17 +13,22 @@ namespace CapaDePresentacion
     public partial class FrProgreso : Form
     {
         private int currentIndex = 0;
-        private string fullTitle = "BIENVENIDO USUARIO: ";
+        private string Salido = "BIENVENIDO USUARIO";
+        private string fullTitle = "";
         private Timer fadeOutTimer = new Timer(); // Timer para manejar la transición de desvanecimiento
 
         public FrProgreso(string Usuario)
         {
             InitializeComponent();
 
+            this.BackColor = System.Drawing.Color.Magenta;
+            this.TransparencyKey = System.Drawing.Color.Magenta;
+
+
             MovForm.EnableFormDrag(this, this);
 
             fullTitle = fullTitle + Usuario;
-            lblTitulo.Text = string.Empty;
+            lblTituloUsuario.Text = string.Empty;
 
             // Configurar el Timer de desvanecimiento
             fadeOutTimer.Interval = 50; // Intervalo en milisegundos
@@ -32,6 +37,7 @@ namespace CapaDePresentacion
 
         private void FrProgreso_Load(object sender, EventArgs e)
         {
+
             timerTitulo.Start();
         }
 
@@ -39,7 +45,7 @@ namespace CapaDePresentacion
         {
             if (currentIndex < fullTitle.Length)
             {
-                lblTitulo.Text += fullTitle[currentIndex];
+                lblTituloUsuario.Text += fullTitle[currentIndex];
                 currentIndex++;
             }
             else

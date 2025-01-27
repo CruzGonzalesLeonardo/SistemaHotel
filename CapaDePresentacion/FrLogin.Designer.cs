@@ -37,91 +37,93 @@
             this.Titulo = new System.Windows.Forms.Label();
             this.TituErrorContraseña = new System.Windows.Forms.Label();
             this.TituErrorUsuario = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.sPanel1 = new Sipaa.Framework.SPanel();
+            this.PanelFondo = new Sipaa.Framework.SPanel();
             ((System.ComponentModel.ISupportInitialize)(this.PictureHotel)).BeginInit();
+            this.sPanel1.SuspendLayout();
+            this.PanelFondo.SuspendLayout();
             this.SuspendLayout();
             // 
             // PictureHotel
             // 
-            this.PictureHotel.Dock = System.Windows.Forms.DockStyle.Right;
             this.PictureHotel.Image = ((System.Drawing.Image)(resources.GetObject("PictureHotel.Image")));
-            this.PictureHotel.Location = new System.Drawing.Point(291, 0);
+            this.PictureHotel.Location = new System.Drawing.Point(12, 12);
             this.PictureHotel.Name = "PictureHotel";
-            this.PictureHotel.Size = new System.Drawing.Size(285, 282);
+            this.PictureHotel.Size = new System.Drawing.Size(250, 240);
             this.PictureHotel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureHotel.TabIndex = 0;
             this.PictureHotel.TabStop = false;
             // 
             // btnSalir
             // 
-            this.btnSalir.BackColor = System.Drawing.Color.Transparent;
-            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.BackColor = System.Drawing.Color.Black;
+            this.btnSalir.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
-            this.btnSalir.Location = new System.Drawing.Point(547, 0);
+            this.btnSalir.Location = new System.Drawing.Point(530, 1);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(29, 23);
+            this.btnSalir.Size = new System.Drawing.Size(31, 27);
             this.btnSalir.TabIndex = 1;
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // txtUsuario
             // 
-            this.txtUsuario.BackColor = System.Drawing.SystemColors.Window;
-            this.txtUsuario.BorderColor = System.Drawing.Color.Blue;
-            this.txtUsuario.BorderFocusColor = System.Drawing.Color.Lime;
-            this.txtUsuario.BorderRadius = 0;
-            this.txtUsuario.BorderSize = 2;
-            this.txtUsuario.Font = new System.Drawing.Font("Arial", 10F);
-            this.txtUsuario.ForeColor = System.Drawing.Color.Black;
-            this.txtUsuario.Location = new System.Drawing.Point(20, 74);
+            this.txtUsuario.BackColor = System.Drawing.Color.Black;
+            this.txtUsuario.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
+            this.txtUsuario.BorderFocusColor = System.Drawing.Color.White;
+            this.txtUsuario.BorderRadius = 10;
+            this.txtUsuario.BorderSize = 1;
+            this.txtUsuario.Font = new System.Drawing.Font("Metropolis Black", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.ForeColor = System.Drawing.Color.White;
+            this.txtUsuario.Location = new System.Drawing.Point(20, 34);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
-            this.txtUsuario.Multiline = true;
+            this.txtUsuario.Multiline = false;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txtUsuario.PasswordChar = false;
-            this.txtUsuario.PlaceholderColor = System.Drawing.Color.Gray;
+            this.txtUsuario.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(169)))), ((int)(((byte)(172)))));
             this.txtUsuario.PlaceholderText = "Nombre de Ususario";
-            this.txtUsuario.Size = new System.Drawing.Size(241, 29);
+            this.txtUsuario.Size = new System.Drawing.Size(220, 27);
             this.txtUsuario.TabIndex = 4;
             this.txtUsuario.Texts = "";
-            this.txtUsuario.UnderlinedStyle = true;
+            this.txtUsuario.UnderlinedStyle = false;
             // 
             // txtContraseña
             // 
-            this.txtContraseña.BackColor = System.Drawing.SystemColors.Window;
-            this.txtContraseña.BorderColor = System.Drawing.Color.Blue;
-            this.txtContraseña.BorderFocusColor = System.Drawing.Color.Lime;
-            this.txtContraseña.BorderRadius = 0;
-            this.txtContraseña.BorderSize = 2;
-            this.txtContraseña.Font = new System.Drawing.Font("Arial", 10F);
-            this.txtContraseña.ForeColor = System.Drawing.Color.Black;
-            this.txtContraseña.Location = new System.Drawing.Point(20, 144);
+            this.txtContraseña.BackColor = System.Drawing.Color.Black;
+            this.txtContraseña.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(118)))), ((int)(((byte)(0)))));
+            this.txtContraseña.BorderFocusColor = System.Drawing.Color.White;
+            this.txtContraseña.BorderRadius = 10;
+            this.txtContraseña.BorderSize = 1;
+            this.txtContraseña.Font = new System.Drawing.Font("Metropolis Black", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContraseña.ForeColor = System.Drawing.Color.White;
+            this.txtContraseña.Location = new System.Drawing.Point(20, 93);
             this.txtContraseña.Margin = new System.Windows.Forms.Padding(4);
             this.txtContraseña.Multiline = false;
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txtContraseña.PasswordChar = true;
-            this.txtContraseña.PlaceholderColor = System.Drawing.Color.Gray;
+            this.txtContraseña.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(169)))), ((int)(((byte)(172)))));
             this.txtContraseña.PlaceholderText = "Ingresar Contraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(241, 31);
+            this.txtContraseña.Size = new System.Drawing.Size(220, 27);
             this.txtContraseña.TabIndex = 5;
             this.txtContraseña.Texts = "";
-            this.txtContraseña.UnderlinedStyle = true;
+            this.txtContraseña.UnderlinedStyle = false;
             // 
             // btnIngresar
             // 
-            this.btnIngresar.BackColor = System.Drawing.Color.Blue;
+            this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(118)))), ((int)(((byte)(0)))));
             this.btnIngresar.BorderColor = System.Drawing.Color.White;
             this.btnIngresar.BorderRadius = 10;
             this.btnIngresar.BorderSize = 0;
             this.btnIngresar.FlatAppearance.BorderSize = 0;
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIngresar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresar.Font = new System.Drawing.Font("Russo One", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.ForeColor = System.Drawing.Color.White;
-            this.btnIngresar.Location = new System.Drawing.Point(80, 210);
+            this.btnIngresar.Location = new System.Drawing.Point(337, 205);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(126, 35);
+            this.btnIngresar.Size = new System.Drawing.Size(152, 26);
             this.btnIngresar.TabIndex = 6;
             this.btnIngresar.Text = "LOGIN";
             this.btnIngresar.UseVisualStyleBackColor = false;
@@ -130,62 +132,86 @@
             // Titulo
             // 
             this.Titulo.AutoSize = true;
-            this.Titulo.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Titulo.Location = new System.Drawing.Point(93, 24);
+            this.Titulo.Font = new System.Drawing.Font("Russo One", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Titulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(118)))), ((int)(((byte)(0)))));
+            this.Titulo.Location = new System.Drawing.Point(57, 0);
             this.Titulo.Name = "Titulo";
-            this.Titulo.Size = new System.Drawing.Size(95, 22);
+            this.Titulo.Size = new System.Drawing.Size(142, 21);
             this.Titulo.TabIndex = 7;
-            this.Titulo.Text = "USUARIO";
+            this.Titulo.Text = "BIENVENIDO";
             // 
             // TituErrorContraseña
             // 
             this.TituErrorContraseña.AutoSize = true;
+            this.TituErrorContraseña.Font = new System.Drawing.Font("Metropolis Black", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TituErrorContraseña.ForeColor = System.Drawing.Color.Red;
-            this.TituErrorContraseña.Location = new System.Drawing.Point(17, 179);
+            this.TituErrorContraseña.Location = new System.Drawing.Point(76, 124);
             this.TituErrorContraseña.Name = "TituErrorContraseña";
-            this.TituErrorContraseña.Size = new System.Drawing.Size(86, 13);
+            this.TituErrorContraseña.Size = new System.Drawing.Size(90, 10);
             this.TituErrorContraseña.TabIndex = 8;
             this.TituErrorContraseña.Text = "Error Contraseña";
             // 
             // TituErrorUsuario
             // 
             this.TituErrorUsuario.AutoSize = true;
+            this.TituErrorUsuario.Font = new System.Drawing.Font("Metropolis Black", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TituErrorUsuario.ForeColor = System.Drawing.Color.Red;
-            this.TituErrorUsuario.Location = new System.Drawing.Point(17, 107);
+            this.TituErrorUsuario.Location = new System.Drawing.Point(94, 65);
             this.TituErrorUsuario.Name = "TituErrorUsuario";
-            this.TituErrorUsuario.Size = new System.Drawing.Size(68, 13);
+            this.TituErrorUsuario.Size = new System.Drawing.Size(72, 10);
             this.TituErrorUsuario.TabIndex = 9;
             this.TituErrorUsuario.Text = "Error Usuario";
             // 
-            // progressBar1
+            // sPanel1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(310, 247);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(254, 23);
-            this.progressBar1.TabIndex = 10;
+            this.sPanel1.BackColor = System.Drawing.Color.Black;
+            this.sPanel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(118)))), ((int)(((byte)(0)))));
+            this.sPanel1.BorderRadius = 10;
+            this.sPanel1.BorderSize = 3;
+            this.sPanel1.Controls.Add(this.Titulo);
+            this.sPanel1.Controls.Add(this.TituErrorUsuario);
+            this.sPanel1.Controls.Add(this.txtUsuario);
+            this.sPanel1.Controls.Add(this.TituErrorContraseña);
+            this.sPanel1.Controls.Add(this.txtContraseña);
+            this.sPanel1.ForeColor = System.Drawing.Color.Black;
+            this.sPanel1.Location = new System.Drawing.Point(281, 47);
+            this.sPanel1.Name = "sPanel1";
+            this.sPanel1.Size = new System.Drawing.Size(259, 167);
+            this.sPanel1.TabIndex = 10;
+            // 
+            // PanelFondo
+            // 
+            this.PanelFondo.BackColor = System.Drawing.Color.Black;
+            this.PanelFondo.BorderColor = System.Drawing.Color.White;
+            this.PanelFondo.BorderRadius = 20;
+            this.PanelFondo.BorderSize = 1;
+            this.PanelFondo.Controls.Add(this.btnSalir);
+            this.PanelFondo.Controls.Add(this.sPanel1);
+            this.PanelFondo.ForeColor = System.Drawing.Color.Black;
+            this.PanelFondo.Location = new System.Drawing.Point(3, 7);
+            this.PanelFondo.Name = "PanelFondo";
+            this.PanelFondo.Size = new System.Drawing.Size(561, 249);
+            this.PanelFondo.TabIndex = 11;
             // 
             // FrLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(576, 282);
-            this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.TituErrorUsuario);
-            this.Controls.Add(this.TituErrorContraseña);
-            this.Controls.Add(this.Titulo);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(571, 266);
             this.Controls.Add(this.btnIngresar);
-            this.Controls.Add(this.txtContraseña);
-            this.Controls.Add(this.txtUsuario);
-            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.PictureHotel);
+            this.Controls.Add(this.PanelFondo);
+            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrLogin";
             ((System.ComponentModel.ISupportInitialize)(this.PictureHotel)).EndInit();
+            this.sPanel1.ResumeLayout(false);
+            this.sPanel1.PerformLayout();
+            this.PanelFondo.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -199,6 +225,7 @@
         private System.Windows.Forms.Label Titulo;
         private System.Windows.Forms.Label TituErrorContraseña;
         private System.Windows.Forms.Label TituErrorUsuario;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private Sipaa.Framework.SPanel sPanel1;
+        private Sipaa.Framework.SPanel PanelFondo;
     }
 }

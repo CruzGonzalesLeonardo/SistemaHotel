@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CapaDePresentacion.FrData;
+using CapaDePresentacion.FrProcesos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,14 +33,9 @@ namespace CapaDePresentacion
 
         private void FrInicio_Load(object sender, EventArgs e)
         {
-            PanelMenu.Visible = false;
-            PanelCHECK.Visible = false;
-            PanelHabitacion.Visible = false;
-            PanelPersonal.Visible = false;
             PanelReporte.Visible = false;
             PanelReserva.Visible = false;
-            PanelServicio.Visible = false;
-            PanelCliente.Visible = false;
+            PanelMantenimiento.Visible = false;
         }
 
         private void btnCerrar_Click(object sender, EventArgs e) {Application.Exit();}
@@ -115,14 +112,10 @@ namespace CapaDePresentacion
                 return;
             }
 
-            PanelMenu.Visible = false;
-            PanelCHECK.Visible = false;
-            PanelHabitacion.Visible = false;
-            PanelPersonal.Visible = false;
+
             PanelReporte.Visible = false;
             PanelReserva.Visible = false;
-            PanelServicio.Visible = false;
-            PanelCliente.Visible = false;
+            PanelMantenimiento.Visible = false;
 
             elegido.Visible = true;
         }
@@ -130,79 +123,35 @@ namespace CapaDePresentacion
         private void AjustarBotones()
         {
             UtilidadForm.AjustarBoton(btnMenuPrincipal, EstadoPanelOpcion, "MENU PRINCIPAL");
-            UtilidadForm.AjustarBoton(btnResumen, EstadoPanelOpcion, "RESUMEN GENERAL");
-            UtilidadForm.AjustarBoton(btnAlerta, EstadoPanelOpcion, "ALERTAS");
-            UtilidadForm.AjustarBoton(btnReserva, EstadoPanelOpcion, "RESERVA");
-            UtilidadForm.AjustarBoton(btnNewReserva, EstadoPanelOpcion, "NUEVA RESERVA");
+            UtilidadForm.AjustarBoton(btnRecepcion, EstadoPanelOpcion, "RESERVA");
+            UtilidadForm.AjustarBoton(btnReserva, EstadoPanelOpcion, "NUEVA RESERVA");
             UtilidadForm.AjustarBoton(btnListaReserva, EstadoPanelOpcion, "LISTA RESERVA");
-            UtilidadForm.AjustarBoton(btnHistorialReser, EstadoPanelOpcion, "HISTORIAL");
-            UtilidadForm.AjustarBoton(btnHabitacion, EstadoPanelOpcion, "HABITACION");
-            UtilidadForm.AjustarBoton(btnVerHabitacion, EstadoPanelOpcion, "VER HABITACION");
-            UtilidadForm.AjustarBoton(btnEstadoHabitacion, EstadoPanelOpcion, "ESTADO");
-            UtilidadForm.AjustarBoton(btnCheck, EstadoPanelOpcion, "CHECK-IN/CHECK-OUT");
             UtilidadForm.AjustarBoton(btnCheckIn, EstadoPanelOpcion, "CHECK-IN");
-            UtilidadForm.AjustarBoton(btnCheckOut, EstadoPanelOpcion, "CHECK-OUT");
-            UtilidadForm.AjustarBoton(btnServicio, EstadoPanelOpcion, "SERVICIOS");
-            UtilidadForm.AjustarBoton(btnServEstablecidos, EstadoPanelOpcion, "ESTABLECIDOS");
-            UtilidadForm.AjustarBoton(btnServImprevisto, EstadoPanelOpcion, "IMPREVISTOS");
-            UtilidadForm.AjustarBoton(btnReporte, EstadoPanelOpcion, "REPORTES");
-            UtilidadForm.AjustarBoton(btnFinanciero, EstadoPanelOpcion, "FINANCIEROS");
-            UtilidadForm.AjustarBoton(btnCliente, EstadoPanelOpcion, "CLIENTES");
-            UtilidadForm.AjustarBoton(btnPersonal, EstadoPanelOpcion, "GESTION PERSONAL");
-            UtilidadForm.AjustarBoton(btnNewPersonal, EstadoPanelOpcion, "NUEVO PERSONAL");
-            UtilidadForm.AjustarBoton(btnListaPersonal, EstadoPanelOpcion, "LISTA PERSONAL");
-            UtilidadForm.AjustarBoton(btnGestionCliente, EstadoPanelOpcion, "GESTION CLIENTE");
-            UtilidadForm.AjustarBoton(btnNuevoCliente, EstadoPanelOpcion, "NUEVO CLIENTE");
-            UtilidadForm.AjustarBoton(btnListaCliente, EstadoPanelOpcion, "LISTA CLIENTE");
+            UtilidadForm.AjustarBoton(btnGestionServicios, EstadoPanelOpcion, "ESTABLECIDOS");
+            UtilidadForm.AjustarBoton(btnGestionHabitaciones, EstadoPanelOpcion, "IMPREVISTOS");
+
         }
         private void btnMenuPrincipal_Click(object sender, EventArgs e)
         {
 
-            //UtilidadForm.AlternarVisibilidad(PanelMenu);
-            AjustarOpciones(PanelMenu);
-
         }
 
-        private void bntReserva_Click(object sender, EventArgs e)
+        private void btnRecepcion_Click(object sender, EventArgs e)
         {
-            //UtilidadForm.AlternarVisibilidad(PanelReserva);
             AjustarOpciones(PanelReserva);
-        }
-
-        private void btnHabitacion_Click(object sender, EventArgs e)
-        {
-            //UtilidadForm.AlternarVisibilidad(PanelHabitacion);
-            AjustarOpciones(PanelHabitacion);
-        }
-
-        private void btnCheck_Click(object sender, EventArgs e)
-        {
-            //UtilidadForm.AlternarVisibilidad(PanelCHECK);
-            AjustarOpciones(PanelCHECK);
-        }
-
-        private void btnServicio_Click(object sender, EventArgs e)
-        {
-            // UtilidadForm.AlternarVisibilidad(PanelServicio);
-            AjustarOpciones(PanelServicio);
         }
 
         private void btnReporte_Click(object sender, EventArgs e)
         {
-            // UtilidadForm.AlternarVisibilidad(PanelReporte);
             AjustarOpciones(PanelReporte);
         }
 
-        private void btnPersonal_Click(object sender, EventArgs e)
+
+        private void btnMantenimiento_Click(object sender, EventArgs e)
         {
-            // UtilidadForm.AlternarVisibilidad(PanelPersonal);
-            AjustarOpciones(PanelPersonal);
+            AjustarOpciones(PanelMantenimiento);
         }
-        private void btnGestionCliente_Click(object sender, EventArgs e)
-        {
-            //UtilidadForm.AlternarVisibilidad(PanelCliente);
-            AjustarOpciones(PanelCliente);
-        }
+
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -210,5 +159,41 @@ namespace CapaDePresentacion
             fr.Show();
         }
 
+        private void AbrirForm(object formHijo)
+        {
+            if (this.PanelHijo.Controls.Count > 0)
+                this.PanelHijo.Controls.RemoveAt(0);
+            Form fh = formHijo as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.PanelHijo.Controls.Add(fh);
+            this.PanelHijo.Tag = fh;
+            fh.Show();
+        }
+
+        private void btnGestionCliente_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new FrCliente());
+        }
+
+        private void btnGestionHabitaciones_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new FrHabitacion());
+        }
+
+        private void btnGestionPersonal_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new FrPersonal());   
+        }
+
+        private void btnGestionServicios_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new FrServicios());
+        }
+
+        private void btnReserva_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new FrReservas());
+        }
     }
 }
