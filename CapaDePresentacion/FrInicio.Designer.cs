@@ -52,7 +52,6 @@
             this.btnVentaServicio = new System.Windows.Forms.Button();
             this.btnCheckOn = new System.Windows.Forms.Button();
             this.btnCheckIn = new System.Windows.Forms.Button();
-            this.btnReserva = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnRecepcion = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
@@ -161,7 +160,7 @@
             this.PanelReporte.Controls.Add(this.button6);
             this.PanelReporte.Controls.Add(this.panel4);
             this.PanelReporte.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelReporte.Location = new System.Drawing.Point(0, 448);
+            this.PanelReporte.Location = new System.Drawing.Point(0, 422);
             this.PanelReporte.Name = "PanelReporte";
             this.PanelReporte.Size = new System.Drawing.Size(158, 52);
             this.PanelReporte.TabIndex = 21;
@@ -220,7 +219,7 @@
             this.btnReporte.ForeColor = System.Drawing.Color.White;
             this.btnReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnReporte.Image")));
             this.btnReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporte.Location = new System.Drawing.Point(0, 422);
+            this.btnReporte.Location = new System.Drawing.Point(0, 396);
             this.btnReporte.Name = "btnReporte";
             this.btnReporte.Size = new System.Drawing.Size(158, 26);
             this.btnReporte.TabIndex = 20;
@@ -237,7 +236,7 @@
             this.PanelMantenimiento.Controls.Add(this.btnGestionServicios);
             this.PanelMantenimiento.Controls.Add(this.panel7);
             this.PanelMantenimiento.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelMantenimiento.Location = new System.Drawing.Point(0, 318);
+            this.PanelMantenimiento.Location = new System.Drawing.Point(0, 292);
             this.PanelMantenimiento.Name = "PanelMantenimiento";
             this.PanelMantenimiento.Size = new System.Drawing.Size(158, 104);
             this.PanelMantenimiento.TabIndex = 12;
@@ -334,7 +333,7 @@
             this.btnMantenimiento.ForeColor = System.Drawing.Color.White;
             this.btnMantenimiento.Image = ((System.Drawing.Image)(resources.GetObject("btnMantenimiento.Image")));
             this.btnMantenimiento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMantenimiento.Location = new System.Drawing.Point(0, 292);
+            this.btnMantenimiento.Location = new System.Drawing.Point(0, 266);
             this.btnMantenimiento.Name = "btnMantenimiento";
             this.btnMantenimiento.Size = new System.Drawing.Size(158, 26);
             this.btnMantenimiento.TabIndex = 19;
@@ -349,12 +348,11 @@
             this.PanelReserva.Controls.Add(this.btnVentaServicio);
             this.PanelReserva.Controls.Add(this.btnCheckOn);
             this.PanelReserva.Controls.Add(this.btnCheckIn);
-            this.PanelReserva.Controls.Add(this.btnReserva);
             this.PanelReserva.Controls.Add(this.panel3);
             this.PanelReserva.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelReserva.Location = new System.Drawing.Point(0, 162);
             this.PanelReserva.Name = "PanelReserva";
-            this.PanelReserva.Size = new System.Drawing.Size(158, 130);
+            this.PanelReserva.Size = new System.Drawing.Size(158, 104);
             this.PanelReserva.TabIndex = 6;
             // 
             // btnListaReserva
@@ -367,7 +365,7 @@
             this.btnListaReserva.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListaReserva.Image = ((System.Drawing.Image)(resources.GetObject("btnListaReserva.Image")));
             this.btnListaReserva.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnListaReserva.Location = new System.Drawing.Point(12, 104);
+            this.btnListaReserva.Location = new System.Drawing.Point(12, 78);
             this.btnListaReserva.Name = "btnListaReserva";
             this.btnListaReserva.Size = new System.Drawing.Size(146, 26);
             this.btnListaReserva.TabIndex = 6;
@@ -384,7 +382,7 @@
             this.btnVentaServicio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVentaServicio.Image = ((System.Drawing.Image)(resources.GetObject("btnVentaServicio.Image")));
             this.btnVentaServicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentaServicio.Location = new System.Drawing.Point(12, 78);
+            this.btnVentaServicio.Location = new System.Drawing.Point(12, 52);
             this.btnVentaServicio.Name = "btnVentaServicio";
             this.btnVentaServicio.Size = new System.Drawing.Size(146, 26);
             this.btnVentaServicio.TabIndex = 9;
@@ -401,7 +399,7 @@
             this.btnCheckOn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckOn.Image = ((System.Drawing.Image)(resources.GetObject("btnCheckOn.Image")));
             this.btnCheckOn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCheckOn.Location = new System.Drawing.Point(12, 52);
+            this.btnCheckOn.Location = new System.Drawing.Point(12, 26);
             this.btnCheckOn.Name = "btnCheckOn";
             this.btnCheckOn.Size = new System.Drawing.Size(146, 26);
             this.btnCheckOn.TabIndex = 11;
@@ -418,30 +416,13 @@
             this.btnCheckIn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckIn.Image = ((System.Drawing.Image)(resources.GetObject("btnCheckIn.Image")));
             this.btnCheckIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCheckIn.Location = new System.Drawing.Point(12, 26);
+            this.btnCheckIn.Location = new System.Drawing.Point(12, 0);
             this.btnCheckIn.Name = "btnCheckIn";
             this.btnCheckIn.Size = new System.Drawing.Size(146, 26);
             this.btnCheckIn.TabIndex = 10;
             this.btnCheckIn.Text = "CHECK IN";
             this.btnCheckIn.UseVisualStyleBackColor = false;
-            // 
-            // btnReserva
-            // 
-            this.btnReserva.AutoSize = true;
-            this.btnReserva.BackColor = System.Drawing.Color.White;
-            this.btnReserva.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReserva.FlatAppearance.BorderSize = 0;
-            this.btnReserva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReserva.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReserva.Image = ((System.Drawing.Image)(resources.GetObject("btnReserva.Image")));
-            this.btnReserva.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReserva.Location = new System.Drawing.Point(12, 0);
-            this.btnReserva.Name = "btnReserva";
-            this.btnReserva.Size = new System.Drawing.Size(146, 26);
-            this.btnReserva.TabIndex = 0;
-            this.btnReserva.Text = "RESERVA";
-            this.btnReserva.UseVisualStyleBackColor = false;
-            this.btnReserva.Click += new System.EventHandler(this.btnReserva_Click);
+            this.btnCheckIn.Click += new System.EventHandler(this.btnCheckIn_Click);
             // 
             // panel3
             // 
@@ -449,7 +430,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(12, 130);
+            this.panel3.Size = new System.Drawing.Size(12, 104);
             this.panel3.TabIndex = 5;
             // 
             // btnRecepcion
@@ -601,7 +582,6 @@
         private System.Windows.Forms.Button btnMenuPrincipal;
         private System.Windows.Forms.Panel PanelReserva;
         private System.Windows.Forms.Button btnListaReserva;
-        private System.Windows.Forms.Button btnReserva;
         private System.Windows.Forms.Button btnRecepcion;
         private System.Windows.Forms.Panel PanelMantenimiento;
         private System.Windows.Forms.Button btnGestionHabitaciones;

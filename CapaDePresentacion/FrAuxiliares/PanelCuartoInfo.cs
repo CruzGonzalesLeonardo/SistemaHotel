@@ -96,7 +96,7 @@ namespace CapaDePresentacion.FrAuxiliares
             }
             else
             {
-                FrGestionReserva Reserva = new FrGestionReserva();
+                FrGestionReserva Reserva = new FrGestionReserva(TituloNumero.Text,TituloTipo.Text,Convert.ToString(NumeroEstado),"13:00","Wifi,tele,doblecama,etc");
                 Reserva.ShowDialog();
 
             }

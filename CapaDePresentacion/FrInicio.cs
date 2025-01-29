@@ -124,7 +124,6 @@ namespace CapaDePresentacion
         {
             UtilidadForm.AjustarBoton(btnMenuPrincipal, EstadoPanelOpcion, "MENU PRINCIPAL");
             UtilidadForm.AjustarBoton(btnRecepcion, EstadoPanelOpcion, "RESERVA");
-            UtilidadForm.AjustarBoton(btnReserva, EstadoPanelOpcion, "NUEVA RESERVA");
             UtilidadForm.AjustarBoton(btnListaReserva, EstadoPanelOpcion, "LISTA RESERVA");
             UtilidadForm.AjustarBoton(btnCheckIn, EstadoPanelOpcion, "CHECK-IN");
             UtilidadForm.AjustarBoton(btnGestionServicios, EstadoPanelOpcion, "ESTABLECIDOS");
@@ -193,7 +192,12 @@ namespace CapaDePresentacion
 
         private void btnReserva_Click(object sender, EventArgs e)
         {
-            AbrirForm(new FrReservas());
+            AbrirForm(new FrCheckIn());
+        }
+
+        private void btnCheckIn_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new FrCheckIn());
         }
     }
 }
