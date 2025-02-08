@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Sipaa.Framework;
+using CapadeNegocio;
+using System.Security.Cryptography.X509Certificates;
 
 namespace CapaDePresentacion
 {
@@ -48,21 +50,56 @@ namespace CapaDePresentacion
             bool HayError = false;
 
             if (string.IsNullOrWhiteSpace(txtUsuario.Texts)) {
+                TituErrorUsuario.Text = "Por favor ingrese un usuario";
                 TituErrorUsuario.Visible=true;
                 HayError = true;
-            }else { TituErrorUsuario.Visible=false;}
+            }else 
+            { 
+                TituErrorUsuario.Visible=false;
+            }
 
             if (string.IsNullOrWhiteSpace(txtContraseña.Texts))
             {
+                TituErrorContraseña.Text = "Por favor ingrese su contraseña";
                 TituErrorContraseña.Visible = true;
                 HayError = true;
-            }else { TituErrorContraseña.Visible = false; }
+            }else 
+            { 
+                TituErrorContraseña.Visible = false; 
+            }
 
             if (HayError == true) { return; }
 
-            TituErrorContraseña.Visible = true;
-            TituErrorUsuario.Visible=true;
-            TransitionToOtherForm(txtUsuario.Texts);
+
+            CN_Usuario MiUsuario = new CN_Usuario();
+            var (idUsuario, rol, responsable, mensaje) = MiUsuario.Login(txtUsuario.Texts, txtContraseña.Texts);
+
+            if(idUsuario == 0)
+            {
+                if(mensaje == "Usuario no encontrado.")
+                {
+                    TituErrorUsuario.Text = mensaje;
+                    TituErrorUsuario.Visible = true;
+                }
+                else if (mensaje == "Contraseña incorrecta.")
+                {
+                    TituErrorContraseña.Text = mensaje;
+                    TituErrorContraseña.Visible = true;
+                }
+                else if (mensaje == "El usuario está inactivo. Contacte con el administrador.")
+                {
+                    TituErrorUsuario.Text = mensaje;
+                    TituErrorUsuario.Visible = true;
+                }
+                else
+                {
+                    MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                return;
+            }
+
+            //MessageBox.Show("Bienvenido " + responsable+" "+rol, "Inicio de sesión exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            TransitionToOtherForm(responsable);
 
         }
 
