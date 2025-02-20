@@ -1,6 +1,14 @@
-USE [DBHotelCusco]
-GO
-/****** Object:  Table [dbo].[tblAccesos]    Script Date: 8/02/2025 19:08:19 ******/
+USE MASTER;
+go
+
+CREATE DATABASE DBHotelCusco;
+go
+
+USE DBHotelCusco;
+go
+
+
+/****** Object:  Table [dbo].[tblAccesos]    Script Date: 20/02/2025 12:54:36 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -16,7 +24,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[tblCatalogoServicios]    Script Date: 8/02/2025 19:08:19 ******/
+/****** Object:  Table [dbo].[tblCatalogoServicios]    Script Date: 20/02/2025 12:54:36 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -32,25 +40,26 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[tblCliente]    Script Date: 8/02/2025 19:08:19 ******/
+/****** Object:  Table [dbo].[tblCliente]    Script Date: 20/02/2025 12:54:36 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[tblCliente](
-	[ID_Cliente] [int] NOT NULL,
+	[ID_Cliente] [varchar](15) NOT NULL,
+	[cliTipoDocumento] [varchar](50) NOT NULL,
 	[cliNombre] [varchar](100) NOT NULL,
 	[cliApellido] [varchar](100) NOT NULL,
 	[cliTelefono] [varchar](30) NULL,
 	[cliCorreo] [varchar](100) NULL,
-	[cliEstado] [int] NOT NULL,
+	[cliEstado] [int] NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[ID_Cliente] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[tblEmpleado]    Script Date: 8/02/2025 19:08:19 ******/
+/****** Object:  Table [dbo].[tblEmpleado]    Script Date: 20/02/2025 12:54:36 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -70,7 +79,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[tblHabitacion]    Script Date: 8/02/2025 19:08:19 ******/
+/****** Object:  Table [dbo].[tblHabitacion]    Script Date: 20/02/2025 12:54:36 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -88,7 +97,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[tblPago]    Script Date: 8/02/2025 19:08:19 ******/
+/****** Object:  Table [dbo].[tblPago]    Script Date: 20/02/2025 12:54:36 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -106,14 +115,33 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[tblReserva]    Script Date: 8/02/2025 19:08:19 ******/
+/****** Object:  Table [dbo].[tblRegistroCambios]    Script Date: 20/02/2025 12:54:36 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[tblRegistroCambios](
+	[ID] [int] NOT NULL,
+	[Usuario] [int] NOT NULL,
+	[TablaAfectada] [int] NOT NULL,
+	[RegistroAfectado] [int] NOT NULL,
+	[Fecha] [int] NOT NULL,
+	[DataAnterior] [int] NOT NULL,
+	[DataCambio] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[tblReserva]    Script Date: 20/02/2025 12:54:36 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[tblReserva](
 	[ID_Reserva] [int] IDENTITY(1,1) NOT NULL,
-	[ID_Cliente] [int] NULL,
+	[ID_Cliente] [varchar](15) NULL,
 	[ID_Habitacion] [int] NULL,
 	[FechaEntrada] [datetime] NOT NULL,
 	[FechaSalida] [datetime] NOT NULL,
@@ -127,7 +155,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[tblRol]    Script Date: 8/02/2025 19:08:19 ******/
+/****** Object:  Table [dbo].[tblRol]    Script Date: 20/02/2025 12:54:36 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -142,7 +170,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[tblServiciosExtras]    Script Date: 8/02/2025 19:08:19 ******/
+/****** Object:  Table [dbo].[tblServiciosExtras]    Script Date: 20/02/2025 12:54:36 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -162,7 +190,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[tblSocio]    Script Date: 8/02/2025 19:08:19 ******/
+/****** Object:  Table [dbo].[tblSocio]    Script Date: 20/02/2025 12:54:36 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -178,7 +206,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[tblSucursal]    Script Date: 8/02/2025 19:08:19 ******/
+/****** Object:  Table [dbo].[tblSucursal]    Script Date: 20/02/2025 12:54:36 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -195,7 +223,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[tblTarifa]    Script Date: 8/02/2025 19:08:19 ******/
+/****** Object:  Table [dbo].[tblTarifa]    Script Date: 20/02/2025 12:54:36 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -213,7 +241,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[tblUsuario]    Script Date: 8/02/2025 19:08:19 ******/
+/****** Object:  Table [dbo].[tblUsuario]    Script Date: 20/02/2025 12:54:36 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -227,6 +255,7 @@ CREATE TABLE [dbo].[tblUsuario](
 	[Estado] [varchar](20) NULL,
 	[Responsable] [varchar](100) NULL,
 	[Telefono] [varchar](15) NULL,
+	[CargoSucursal] [varchar](30) NULL,
 	[ID_Empleado] [int] NULL,
 PRIMARY KEY CLUSTERED 
 (
@@ -234,13 +263,19 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-INSERT [dbo].[tblCliente] ([ID_Cliente], [cliNombre], [cliApellido], [cliTelefono], [cliCorreo], [cliEstado]) VALUES (12321452, N'Tomas', N'Alves', N'+51 123456789', N'Tomas@gmail.com', 0)
+INSERT [dbo].[tblCliente] ([ID_Cliente], [cliTipoDocumento], [cliNombre], [cliApellido], [cliTelefono], [cliCorreo], [cliEstado]) VALUES (N'11223344A', N'PASAPORTE', N'Carlos', N'Zumbado', N'987654321', NULL, 0)
 GO
-INSERT [dbo].[tblCliente] ([ID_Cliente], [cliNombre], [cliApellido], [cliTelefono], [cliCorreo], [cliEstado]) VALUES (12345678, N'Juan', N'Quispe', N'+51 123456789', N'Juan@gmail.com', 1)
+INSERT [dbo].[tblCliente] ([ID_Cliente], [cliTipoDocumento], [cliNombre], [cliApellido], [cliTelefono], [cliCorreo], [cliEstado]) VALUES (N'12321452', N'DNI', N'Tomas', N'Alves', N'+51 123456789', N'Tomas@gmail.com', 1)
 GO
-INSERT [dbo].[tblCliente] ([ID_Cliente], [cliNombre], [cliApellido], [cliTelefono], [cliCorreo], [cliEstado]) VALUES (23325231, N'Rosas', N'Torres', N'+51 987654321', N'Rosas@gmail.com', 1)
+INSERT [dbo].[tblCliente] ([ID_Cliente], [cliTipoDocumento], [cliNombre], [cliApellido], [cliTelefono], [cliCorreo], [cliEstado]) VALUES (N'12345678', N'DNI', N'Juan Cruz', N'Quispe', N'+51 123456789', N'Juan@gmail.com', 0)
 GO
-INSERT [dbo].[tblCliente] ([ID_Cliente], [cliNombre], [cliApellido], [cliTelefono], [cliCorreo], [cliEstado]) VALUES (23423523, N'Concurdo', N'Avelardo', N'+51 123456789', N'Concurdo@gmail.com', 2)
+INSERT [dbo].[tblCliente] ([ID_Cliente], [cliTipoDocumento], [cliNombre], [cliApellido], [cliTelefono], [cliCorreo], [cliEstado]) VALUES (N'1234567A', N'DNI', N'Juan', N'Juli', NULL, N'prueba@gmail.com', 1)
+GO
+INSERT [dbo].[tblCliente] ([ID_Cliente], [cliTipoDocumento], [cliNombre], [cliApellido], [cliTelefono], [cliCorreo], [cliEstado]) VALUES (N'23325231', N'DNI', N'Rosas', N'Torres', N'+51 987654321', N'Rosas@gmail.com', 1)
+GO
+INSERT [dbo].[tblCliente] ([ID_Cliente], [cliTipoDocumento], [cliNombre], [cliApellido], [cliTelefono], [cliCorreo], [cliEstado]) VALUES (N'23423523', N'DNI', N'Concurdo', N'Avelardo', N'+51 123456789', N'Concurdo@gmail.com', 0)
+GO
+INSERT [dbo].[tblCliente] ([ID_Cliente], [cliTipoDocumento], [cliNombre], [cliApellido], [cliTelefono], [cliCorreo], [cliEstado]) VALUES (N'76929984', N'DNI', N'Jose leonardo', N'Cruz Gonzales', NULL, N'JoseLeonardo@gmail.com', 1)
 GO
 SET IDENTITY_INSERT [dbo].[tblHabitacion] ON 
 GO
@@ -291,54 +326,6 @@ GO
 INSERT [dbo].[tblHabitacion] ([ID_Habitacion], [hbNumero], [hbTipo], [hbDescripcion], [hbEstado], [ID_Sucursal]) VALUES (23, 302, N'Matrimonial', N'Habitación privada, baño privado', N'Disponible', 2)
 GO
 INSERT [dbo].[tblHabitacion] ([ID_Habitacion], [hbNumero], [hbTipo], [hbDescripcion], [hbEstado], [ID_Sucursal]) VALUES (24, 303, N'Matrimonial', N'Habitación privada, baño privado', N'Disponible', 2)
-GO
-INSERT [dbo].[tblHabitacion] ([ID_Habitacion], [hbNumero], [hbTipo], [hbDescripcion], [hbEstado], [ID_Sucursal]) VALUES (25, 101, N'Matrimonial', N'Habitación privada, baño privado', N'Disponible', 1)
-GO
-INSERT [dbo].[tblHabitacion] ([ID_Habitacion], [hbNumero], [hbTipo], [hbDescripcion], [hbEstado], [ID_Sucursal]) VALUES (26, 102, N'Matrimonial', N'Habitación privada, baño privado', N'Disponible', 1)
-GO
-INSERT [dbo].[tblHabitacion] ([ID_Habitacion], [hbNumero], [hbTipo], [hbDescripcion], [hbEstado], [ID_Sucursal]) VALUES (27, 104, N'Matrimonial', N'Habitación privada, baño privado', N'Disponible', 1)
-GO
-INSERT [dbo].[tblHabitacion] ([ID_Habitacion], [hbNumero], [hbTipo], [hbDescripcion], [hbEstado], [ID_Sucursal]) VALUES (28, 105, N'Doble', N'Dos camas de plaza y media, baño privado', N'Disponible', 1)
-GO
-INSERT [dbo].[tblHabitacion] ([ID_Habitacion], [hbNumero], [hbTipo], [hbDescripcion], [hbEstado], [ID_Sucursal]) VALUES (29, 106, N'Simple', N'Una cama de plaza y media', N'Disponible', 1)
-GO
-INSERT [dbo].[tblHabitacion] ([ID_Habitacion], [hbNumero], [hbTipo], [hbDescripcion], [hbEstado], [ID_Sucursal]) VALUES (30, 201, N'Cuádruple', N'Una cama matrimonial y dos camas simples, baño privado', N'Disponible', 1)
-GO
-INSERT [dbo].[tblHabitacion] ([ID_Habitacion], [hbNumero], [hbTipo], [hbDescripcion], [hbEstado], [ID_Sucursal]) VALUES (31, 202, N'Triple', N'Tres camas de plaza y media, baño privado', N'Disponible', 1)
-GO
-INSERT [dbo].[tblHabitacion] ([ID_Habitacion], [hbNumero], [hbTipo], [hbDescripcion], [hbEstado], [ID_Sucursal]) VALUES (32, 203, N'Doble', N'Dos camas de plaza y media, baño privado', N'Disponible', 1)
-GO
-INSERT [dbo].[tblHabitacion] ([ID_Habitacion], [hbNumero], [hbTipo], [hbDescripcion], [hbEstado], [ID_Sucursal]) VALUES (33, 204, N'Doble', N'Dos camas de plaza y media, baño privado', N'Disponible', 1)
-GO
-INSERT [dbo].[tblHabitacion] ([ID_Habitacion], [hbNumero], [hbTipo], [hbDescripcion], [hbEstado], [ID_Sucursal]) VALUES (34, 205, N'Matrimonial', N'Habitación privada, baño privado', N'Disponible', 1)
-GO
-INSERT [dbo].[tblHabitacion] ([ID_Habitacion], [hbNumero], [hbTipo], [hbDescripcion], [hbEstado], [ID_Sucursal]) VALUES (35, 206, N'Doble', N'Dos camas de plaza y media, baño privado', N'Disponible', 1)
-GO
-INSERT [dbo].[tblHabitacion] ([ID_Habitacion], [hbNumero], [hbTipo], [hbDescripcion], [hbEstado], [ID_Sucursal]) VALUES (36, 207, N'Familiar', N'Una cama matrimonial y una simple, baño privado', N'Disponible', 1)
-GO
-INSERT [dbo].[tblHabitacion] ([ID_Habitacion], [hbNumero], [hbTipo], [hbDescripcion], [hbEstado], [ID_Sucursal]) VALUES (37, 301, N'Doble', N'Dos camas de plaza y media, baño privado', N'Disponible', 1)
-GO
-INSERT [dbo].[tblHabitacion] ([ID_Habitacion], [hbNumero], [hbTipo], [hbDescripcion], [hbEstado], [ID_Sucursal]) VALUES (38, 302, N'Sextuple', N'Seis camas individuales, baño privado', N'Disponible', 1)
-GO
-INSERT [dbo].[tblHabitacion] ([ID_Habitacion], [hbNumero], [hbTipo], [hbDescripcion], [hbEstado], [ID_Sucursal]) VALUES (39, 101, N'Matrimonial', N'Habitación privada, baño privado', N'Disponible', 2)
-GO
-INSERT [dbo].[tblHabitacion] ([ID_Habitacion], [hbNumero], [hbTipo], [hbDescripcion], [hbEstado], [ID_Sucursal]) VALUES (40, 102, N'Triple', N'Tres camas de plaza y media, baño privado', N'Disponible', 2)
-GO
-INSERT [dbo].[tblHabitacion] ([ID_Habitacion], [hbNumero], [hbTipo], [hbDescripcion], [hbEstado], [ID_Sucursal]) VALUES (41, 201, N'Doble', N'Dos camas de plaza y media, baño privado', N'Disponible', 2)
-GO
-INSERT [dbo].[tblHabitacion] ([ID_Habitacion], [hbNumero], [hbTipo], [hbDescripcion], [hbEstado], [ID_Sucursal]) VALUES (42, 202, N'Doble', N'Dos camas de plaza y media, baño privado', N'Disponible', 2)
-GO
-INSERT [dbo].[tblHabitacion] ([ID_Habitacion], [hbNumero], [hbTipo], [hbDescripcion], [hbEstado], [ID_Sucursal]) VALUES (43, 203, N'Matrimonial', N'Habitación privada, baño compartido', N'Disponible', 2)
-GO
-INSERT [dbo].[tblHabitacion] ([ID_Habitacion], [hbNumero], [hbTipo], [hbDescripcion], [hbEstado], [ID_Sucursal]) VALUES (44, 204, N'Familiar', N'Una cama matrimonial y una simple, baño privado', N'Disponible', 2)
-GO
-INSERT [dbo].[tblHabitacion] ([ID_Habitacion], [hbNumero], [hbTipo], [hbDescripcion], [hbEstado], [ID_Sucursal]) VALUES (45, 205, N'Simple', N'Una cama de plaza y media, baño compartido', N'Disponible', 2)
-GO
-INSERT [dbo].[tblHabitacion] ([ID_Habitacion], [hbNumero], [hbTipo], [hbDescripcion], [hbEstado], [ID_Sucursal]) VALUES (46, 301, N'Familiar', N'Una cama matrimonial y una simple, baño privado', N'Disponible', 2)
-GO
-INSERT [dbo].[tblHabitacion] ([ID_Habitacion], [hbNumero], [hbTipo], [hbDescripcion], [hbEstado], [ID_Sucursal]) VALUES (47, 302, N'Matrimonial', N'Habitación privada, baño privado', N'Disponible', 2)
-GO
-INSERT [dbo].[tblHabitacion] ([ID_Habitacion], [hbNumero], [hbTipo], [hbDescripcion], [hbEstado], [ID_Sucursal]) VALUES (48, 303, N'Matrimonial', N'Habitación privada, baño privado', N'Disponible', 2)
 GO
 SET IDENTITY_INSERT [dbo].[tblHabitacion] OFF
 GO
@@ -434,15 +421,17 @@ SET IDENTITY_INSERT [dbo].[tblTarifa] OFF
 GO
 SET IDENTITY_INSERT [dbo].[tblUsuario] ON 
 GO
-INSERT [dbo].[tblUsuario] ([ID_Usuario], [Usuario], [Contraseña], [RolUsuario], [FechaCreacion], [Estado], [Responsable], [Telefono], [ID_Empleado]) VALUES (1, N'User1', N'admin123', N'Administrador', CAST(N'2025-02-08T18:14:40.430' AS DateTime), N'Activo', N'Carlos Fernández', N'987654321', NULL)
+INSERT [dbo].[tblUsuario] ([ID_Usuario], [Usuario], [Contraseña], [RolUsuario], [FechaCreacion], [Estado], [Responsable], [Telefono], [CargoSucursal], [ID_Empleado]) VALUES (1, N'Master', N'Master123', N'Tester', CAST(N'2025-02-17T23:16:28.010' AS DateTime), N'Activo', N'Carlos Fernández', N'987654321', N'Master', NULL)
 GO
-INSERT [dbo].[tblUsuario] ([ID_Usuario], [Usuario], [Contraseña], [RolUsuario], [FechaCreacion], [Estado], [Responsable], [Telefono], [ID_Empleado]) VALUES (2, N'User2', N'recep2024', N'Recepcionista', CAST(N'2025-02-08T18:14:40.430' AS DateTime), N'Activo', N'María López', N'945678123', NULL)
+INSERT [dbo].[tblUsuario] ([ID_Usuario], [Usuario], [Contraseña], [RolUsuario], [FechaCreacion], [Estado], [Responsable], [Telefono], [CargoSucursal], [ID_Empleado]) VALUES (2, N'User1', N'admin123', N'Recepcionista', CAST(N'2025-02-17T23:16:28.010' AS DateTime), N'Activo', N'María López', N'945678123', N'Sucursal 1', NULL)
 GO
-INSERT [dbo].[tblUsuario] ([ID_Usuario], [Usuario], [Contraseña], [RolUsuario], [FechaCreacion], [Estado], [Responsable], [Telefono], [ID_Empleado]) VALUES (3, N'User3', N'limpieza01', N'Supervisor de Limpieza', CAST(N'2025-02-08T18:14:40.430' AS DateTime), N'Activo', N'Juan Pérez', N'912345678', NULL)
+INSERT [dbo].[tblUsuario] ([ID_Usuario], [Usuario], [Contraseña], [RolUsuario], [FechaCreacion], [Estado], [Responsable], [Telefono], [CargoSucursal], [ID_Empleado]) VALUES (3, N'User2', N'admin321', N'Supervisor de recursos', CAST(N'2025-02-17T23:16:28.010' AS DateTime), N'Activo', N'Juan Pérez', N'912345678', N'Sucursal 2', NULL)
 GO
 SET IDENTITY_INSERT [dbo].[tblUsuario] OFF
 GO
 ALTER TABLE [dbo].[tblAccesos] ADD  DEFAULT (getdate()) FOR [Fecha_Ingreso]
+GO
+ALTER TABLE [dbo].[tblCliente] ADD  DEFAULT ((1)) FOR [cliEstado]
 GO
 ALTER TABLE [dbo].[tblEmpleado] ADD  DEFAULT (getdate()) FOR [emFechaIngreso]
 GO
@@ -468,7 +457,142 @@ ALTER TABLE [dbo].[tblUsuario] ADD  DEFAULT (getdate()) FOR [FechaCreacion]
 GO
 ALTER TABLE [dbo].[tblUsuario] ADD  DEFAULT ('Activo') FOR [Estado]
 GO
-/****** Object:  StoredProcedure [dbo].[PR_LOGIN]    Script Date: 8/02/2025 19:08:19 ******/
+ALTER TABLE [dbo].[tblEmpleado]  WITH CHECK ADD FOREIGN KEY([ID_Rol])
+REFERENCES [dbo].[tblRol] ([ID_Rol])
+GO
+ALTER TABLE [dbo].[tblEmpleado]  WITH CHECK ADD FOREIGN KEY([ID_Sucursal])
+REFERENCES [dbo].[tblSucursal] ([ID_Sucursal])
+GO
+ALTER TABLE [dbo].[tblHabitacion]  WITH CHECK ADD FOREIGN KEY([ID_Sucursal])
+REFERENCES [dbo].[tblSucursal] ([ID_Sucursal])
+GO
+ALTER TABLE [dbo].[tblPago]  WITH CHECK ADD FOREIGN KEY([ID_Reserva])
+REFERENCES [dbo].[tblReserva] ([ID_Reserva])
+GO
+ALTER TABLE [dbo].[tblPago]  WITH CHECK ADD FOREIGN KEY([ID_Socio])
+REFERENCES [dbo].[tblSocio] ([ID_Socio])
+GO
+ALTER TABLE [dbo].[tblReserva]  WITH CHECK ADD FOREIGN KEY([ID_Cliente])
+REFERENCES [dbo].[tblCliente] ([ID_Cliente])
+GO
+ALTER TABLE [dbo].[tblReserva]  WITH CHECK ADD FOREIGN KEY([ID_Habitacion])
+REFERENCES [dbo].[tblHabitacion] ([ID_Habitacion])
+GO
+ALTER TABLE [dbo].[tblServiciosExtras]  WITH CHECK ADD FOREIGN KEY([ID_Reserva])
+REFERENCES [dbo].[tblReserva] ([ID_Reserva])
+GO
+ALTER TABLE [dbo].[tblServiciosExtras]  WITH CHECK ADD FOREIGN KEY([ID_Servicio])
+REFERENCES [dbo].[tblCatalogoServicios] ([ID_Servicio])
+GO
+ALTER TABLE [dbo].[tblTarifa]  WITH CHECK ADD FOREIGN KEY([ID_Habitacion])
+REFERENCES [dbo].[tblHabitacion] ([ID_Habitacion])
+GO
+ALTER TABLE [dbo].[tblUsuario]  WITH CHECK ADD FOREIGN KEY([ID_Empleado])
+REFERENCES [dbo].[tblEmpleado] ([ID_Empleado])
+GO
+/****** Object:  StoredProcedure [dbo].[PR_ALTER_CLIENTE_ESTADO]    Script Date: 20/02/2025 12:54:36 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[PR_ALTER_CLIENTE_ESTADO]
+	@ID VARCHAR(15),
+	@Estado INT
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	BEGIN TRY
+		UPDATE tblCliente
+		SET cliEstado = @Estado
+		WHERE ID_Cliente = @ID;
+		SELECT 'Éxito' AS Estado, 'Se modifico el estado correctamente' AS Mensaje;
+	END TRY
+	BEGIN CATCH
+		SELECT 'Error' AS Estado, ERROR_MESSAGE() AS Mensaje;
+	END CATCH
+END;
+GO
+/****** Object:  StoredProcedure [dbo].[PR_BUSCAR_CLIENTE_ESTADO]    Script Date: 20/02/2025 12:54:36 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[PR_BUSCAR_CLIENTE_ESTADO]
+    @Busqueda NVARCHAR(100), -- Puede ser Número de Documento, Nombre Completo o una parte de ellos
+    @Estado INT -- 0: clientes no deseados, 1: activos, 2: inactivos, 3: sin distinción
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        -- Validación del estado
+        IF @Estado NOT IN (0, 1, 2, 3)
+        BEGIN
+            THROW 50001, 'Estado inválido. Debe ser 0, 1, 2 o 3.', 1;
+        END
+
+        -- Consulta principal
+        SELECT ID_Cliente AS Numero,
+			   cliTipoDocumento AS Documento,
+			   cliNombre AS Nombre,
+			   cliApellido AS Apellido, 
+			   cliTelefono AS Telefono, 
+			   cliCorreo AS Correo, 
+			   cliEstado AS Estado,
+			   NULL AS Mensaje
+        FROM tblCliente
+        WHERE 
+            (@Estado = 3 OR cliEstado = @Estado) -- Filtra por estado si no es 3
+            AND (
+                ID_Cliente LIKE '%' + @Busqueda + '%' -- Coincidencia en Número de Documento
+                OR cliNombre + ' ' + cliApellido LIKE '%' + @Busqueda + '%' -- Coincidencia en Nombre Completo
+                OR cliNombre LIKE '%' + @Busqueda + '%' -- Coincidencia en Nombre
+                OR cliApellido LIKE '%' + @Busqueda + '%' -- Coincidencia en Apellido
+            );
+    END TRY
+    BEGIN CATCH
+        -- En caso de error, devolver una estructura fija con NULLs
+        SELECT NULL AS Numero, 
+			   NULL AS Documento,
+			   NULL AS Nombre, 
+			   NULL AS Apellido, 
+			   NULL AS Telefono, 
+			   NULL AS Correo, 
+			   NULL AS Estado,
+			   ERROR_MESSAGE() AS Mensaje;
+    END CATCH
+END;
+GO
+/****** Object:  StoredProcedure [dbo].[PR_INSERT_CLIENTE]    Script Date: 20/02/2025 12:54:36 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[PR_INSERT_CLIENTE]
+	@ID VARCHAR(15),
+	@TipoDocumento VARCHAR(30),
+	@Nombre VARCHAR(50),
+	@Apellido VARCHAR(50),
+	@Telefono VARCHAR(30),
+	@Correo VARCHAR(100)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	BEGIN TRY
+
+		INSERT INTO tblCliente (ID_Cliente,cliTipoDocumento,cliNombre,cliApellido,cliTelefono,cliCorreo)
+		VALUES (@ID,@TipoDocumento,@Nombre,@Apellido,@Telefono,@Correo);
+
+		SELECT 'Éxito' AS Estado, 'Cliente insertado correctamente' AS Mensaje;
+	END TRY
+	BEGIN CATCH
+		SELECT 'Error' AS Estado, ERROR_MESSAGE() AS Mensaje;
+	END CATCH
+END;
+GO
+/****** Object:  StoredProcedure [dbo].[PR_LOGIN]    Script Date: 20/02/2025 12:54:36 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -484,13 +608,15 @@ BEGIN
 	DECLARE @Rol VARCHAR(50);
 	DECLARE @Estado VARCHAR(20);
 	DECLARE @Responsable VARCHAR(100);
+	DECLARE @CargoLugar VARCHAR(20);
 	DECLARE @Mensaje VARCHAR(255);
 
 	SELECT  
 		@IDUsuario = ID_Usuario,
 		@Rol = RolUsuario,
 		@Estado = Estado,
-		@Responsable = Responsable
+		@Responsable = Responsable,
+		@CargoLugar = CargoSucursal
 	FROM tblUsuario 
 	WHERE Usuario = @Usuario;
 
@@ -498,26 +624,137 @@ BEGIN
     IF @IDUsuario IS NULL
     BEGIN
         SET @Mensaje = 'Usuario no encontrado.';
-        SELECT NULL AS ID_Usuario, NULL AS RolUsuario, NULL AS Responsable, @Mensaje AS Mensaje;
+        SELECT NULL AS ID_Usuario, NULL AS RolUsuario, NULL AS Responsable,NULL AS CargoSucursal, @Mensaje AS Mensaje;
         RETURN;
     END
 
     IF NOT EXISTS (SELECT 1 FROM tblUsuario WHERE Usuario = @Usuario AND Contraseña = @Contraseña)
     BEGIN
         SET @Mensaje = 'Contraseña incorrecta.';
-        SELECT NULL AS ID_Usuario, NULL AS RolUsuario, NULL AS Responsable, @Mensaje AS Mensaje;
+        SELECT NULL AS ID_Usuario, NULL AS RolUsuario, NULL AS Responsable,NULL AS CargoSucursal, @Mensaje AS Mensaje;
         RETURN;
     END
 
     IF @Estado <> 'Activo'
     BEGIN
         SET @Mensaje = 'El usuario está inactivo. Contacte con el administrador.';
-        SELECT NULL AS ID_Usuario, NULL AS RolUsuario, NULL AS Responsable, @Mensaje AS Mensaje;
+        SELECT NULL AS ID_Usuario, NULL AS RolUsuario, NULL AS Responsable,NULL AS CargoSucursal, @Mensaje AS Mensaje;
         RETURN;
     END
 
     -- Si pasa todas las validaciones, el inicio de sesión es exitoso
     SET @Mensaje = 'Inicio de sesión exitoso.';
-    SELECT @IDUsuario AS ID_Usuario, @Rol AS RolUsuario, @Responsable AS Responsable, @Mensaje AS Mensaje;
+    SELECT @IDUsuario AS ID_Usuario, @Rol AS RolUsuario, @Responsable AS Responsable,@CargoLugar AS CargoSucursal , @Mensaje AS Mensaje;
+END;
+
+GO
+/****** Object:  StoredProcedure [dbo].[PR_UPDATE_CLIENTE]    Script Date: 20/02/2025 12:54:36 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[PR_UPDATE_CLIENTE]
+	@ID VARCHAR(15),
+	@TipoDocumento VARCHAR(30),
+	@Nombre VARCHAR(50),
+	@Apellido VARCHAR(50),
+	@Telefono VARCHAR(30),
+	@Correo VARCHAR(100),
+	@Estado INT
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	BEGIN TRY
+
+		UPDATE tblCliente
+		SET cliTipoDocumento = @TipoDocumento,
+			cliNombre = @Nombre,
+			cliApellido = @Apellido,
+			cliTelefono = @Telefono,
+			cliCorreo = @Correo,
+			cliEstado = @Estado
+		WHERE ID_Cliente = @ID;
+
+		SELECT 'Éxito' AS Estado, 'Cliente insertado correctamente' AS Mensaje;
+	END TRY
+	BEGIN CATCH
+		SELECT 'Error' AS Estado, ERROR_MESSAGE() AS Mensaje;
+	END CATCH
+END;
+GO
+/****** Object:  StoredProcedure [dbo].[PR_VALIDAR_CLIENTE]    Script Date: 20/02/2025 12:54:36 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[PR_VALIDAR_CLIENTE]
+    @ID VARCHAR(15)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF EXISTS (SELECT 1 FROM tblCliente WHERE ID_Cliente = @ID)
+        SELECT 1 AS Existe;  -- Retorna 1 si el ID ya existe
+    ELSE
+        SELECT 0 AS Existe;  -- Retorna 0 si el ID está disponible
+END;
+GO
+/****** Object:  StoredProcedure [dbo].[PR_VISTA_CLIENTE]    Script Date: 20/02/2025 12:54:36 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[PR_VISTA_CLIENTE]
+	@Estado INT -- 0: clientes no deseados, 1: activos, 2: inactivos, 3: sin distinción
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	BEGIN TRY
+		-- Validación del estado
+		IF @Estado NOT IN (0, 1, 2, 3)
+		BEGIN
+			THROW 50001, 'Estado inválido. Debe ser 0, 1, 2 o 3.', 1;
+		END
+
+		-- Devolver resultados con estructura fija
+		IF @Estado = 3
+		BEGIN
+			SELECT ID_Cliente AS Numero,
+				   cliTipoDocumento AS Documento,
+				   cliNombre AS Nombre, 
+				   cliApellido AS Apellido, 
+				   cliTelefono AS Telefono, 
+				   cliCorreo AS Correo, 
+				   cliEstado AS Estado,
+				   NULL AS Mensaje
+			FROM tblCliente;
+		END
+		ELSE
+		BEGIN
+			SELECT ID_Cliente AS Numero,
+				   cliTipoDocumento AS Documento,
+				   cliNombre AS Nombre,
+				   cliApellido AS Apellido, 
+				   cliTelefono AS Telefono, 
+				   cliCorreo AS Correo, 
+				   cliEstado AS Estado,
+				   NULL AS Mensaje
+			FROM tblCliente 
+			WHERE cliEstado = @Estado;
+		END
+	END TRY
+	BEGIN CATCH
+		-- En caso de error, devolver la misma estructura con valores NULL en las columnas de datos
+		SELECT NULL AS Numero, 
+			   NULL AS Documento,
+			   NULL AS Nombre, 
+			   NULL AS Apellido, 
+			   NULL AS Telefono, 
+			   NULL AS Correo, 
+			   NULL AS Estado,
+			   ERROR_MESSAGE() AS Mensaje;
+	END CATCH
 END;
 GO

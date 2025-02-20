@@ -61,6 +61,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.PanelHijo = new System.Windows.Forms.Panel();
+            this.lblUser = new System.Windows.Forms.Label();
             this.PnEncabezado.SuspendLayout();
             this.PnOpciones.SuspendLayout();
             this.PanelReporte.SuspendLayout();
@@ -73,6 +74,7 @@
             // PnEncabezado
             // 
             this.PnEncabezado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(118)))), ((int)(((byte)(0)))));
+            this.PnEncabezado.Controls.Add(this.lblUser);
             this.PnEncabezado.Controls.Add(this.btnMenu);
             this.PnEncabezado.Controls.Add(this.btnMinimizar);
             this.PnEncabezado.Controls.Add(this.btnEstado);
@@ -539,6 +541,17 @@
             this.PanelHijo.Size = new System.Drawing.Size(1030, 708);
             this.PanelHijo.TabIndex = 5;
             // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F);
+            this.lblUser.ForeColor = System.Drawing.Color.White;
+            this.lblUser.Location = new System.Drawing.Point(52, 9);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(56, 12);
+            this.lblUser.TabIndex = 4;
+            this.lblUser.Text = "USUARIO";
+            // 
             // FrInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -556,6 +569,7 @@
             this.Text = "FrInicio";
             this.Load += new System.EventHandler(this.FrInicio_Load);
             this.PnEncabezado.ResumeLayout(false);
+            this.PnEncabezado.PerformLayout();
             this.PnOpciones.ResumeLayout(false);
             this.PnOpciones.PerformLayout();
             this.PanelReporte.ResumeLayout(false);
@@ -604,5 +618,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblUser;
     }
 }

@@ -46,9 +46,6 @@
             this.sTextBox1 = new Sipaa.Framework.STextBox();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.sButton1 = new Sipaa.Framework.SButton();
-            this.sButton2 = new Sipaa.Framework.SButton();
-            this.sButton3 = new Sipaa.Framework.SButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.NumeroHabitacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,7 +57,6 @@
             this.panel2.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -235,66 +231,12 @@
             // 
             // panel12
             // 
-            this.panel12.Controls.Add(this.sButton1);
-            this.panel12.Controls.Add(this.sButton2);
-            this.panel12.Controls.Add(this.sButton3);
             this.panel12.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.panel12.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel12.Location = new System.Drawing.Point(34, 635);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(938, 73);
             this.panel12.TabIndex = 17;
-            // 
-            // sButton1
-            // 
-            this.sButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
-            this.sButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(169)))), ((int)(((byte)(172)))));
-            this.sButton1.BorderRadius = 6;
-            this.sButton1.BorderSize = 0;
-            this.sButton1.FlatAppearance.BorderSize = 0;
-            this.sButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sButton1.Font = new System.Drawing.Font("Metropolis Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sButton1.ForeColor = System.Drawing.Color.White;
-            this.sButton1.Location = new System.Drawing.Point(354, 16);
-            this.sButton1.Name = "sButton1";
-            this.sButton1.Size = new System.Drawing.Size(118, 32);
-            this.sButton1.TabIndex = 2;
-            this.sButton1.Text = "sButton1";
-            this.sButton1.UseVisualStyleBackColor = false;
-            // 
-            // sButton2
-            // 
-            this.sButton2.BackColor = System.Drawing.Color.White;
-            this.sButton2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(169)))), ((int)(((byte)(172)))));
-            this.sButton2.BorderRadius = 6;
-            this.sButton2.BorderSize = 1;
-            this.sButton2.FlatAppearance.BorderSize = 0;
-            this.sButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sButton2.Font = new System.Drawing.Font("Metropolis Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.sButton2.Location = new System.Drawing.Point(478, 16);
-            this.sButton2.Name = "sButton2";
-            this.sButton2.Size = new System.Drawing.Size(118, 32);
-            this.sButton2.TabIndex = 3;
-            this.sButton2.Text = "sButton2";
-            this.sButton2.UseVisualStyleBackColor = false;
-            // 
-            // sButton3
-            // 
-            this.sButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(22)))), ((int)(((byte)(9)))));
-            this.sButton3.BorderColor = System.Drawing.Color.White;
-            this.sButton3.BorderRadius = 6;
-            this.sButton3.BorderSize = 1;
-            this.sButton3.FlatAppearance.BorderSize = 0;
-            this.sButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sButton3.Font = new System.Drawing.Font("Metropolis Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sButton3.ForeColor = System.Drawing.Color.White;
-            this.sButton3.Location = new System.Drawing.Point(602, 16);
-            this.sButton3.Name = "sButton3";
-            this.sButton3.Size = new System.Drawing.Size(118, 32);
-            this.sButton3.TabIndex = 4;
-            this.sButton3.Text = "sButton3";
-            this.sButton3.UseVisualStyleBackColor = false;
             // 
             // dataGridView1
             // 
@@ -406,7 +348,6 @@
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel9.ResumeLayout(false);
-            this.panel12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -430,9 +371,6 @@
         private Sipaa.Framework.STextBox sTextBox1;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel12;
-        private Sipaa.Framework.SButton sButton1;
-        private Sipaa.Framework.SButton sButton2;
-        private Sipaa.Framework.SButton sButton3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumeroHabitacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;

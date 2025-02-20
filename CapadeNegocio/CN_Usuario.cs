@@ -13,7 +13,7 @@ namespace CapadeNegocio
     {
         private CD_Usuario OjUsuario = new CD_Usuario();
 
-        public (int IDUsuario, string RolUsuario, string Responzable, string MensajeProceso) Login (string Usuario, string Contraseña)
+        public (int IDUsuario, string RolUsuario, string Responzable,string CargoSucursal, string MensajeProceso) Login (string Usuario, string Contraseña)
         {
             DataTable Resultado = OjUsuario.ValidarUsuario(Usuario,Contraseña);
 
@@ -22,13 +22,14 @@ namespace CapadeNegocio
                 int idUsuario = Resultado.Rows[0]["ID_Usuario"] != DBNull.Value ? Convert.ToInt32(Resultado.Rows[0]["ID_Usuario"]) : 0;
                 string rol = Resultado.Rows[0]["RolUsuario"]?.ToString() ?? "";
                 string responsable = Resultado.Rows[0]["Responsable"]?.ToString() ?? "";
+                string CargoSucursal = Resultado.Rows[0]["CargoSucursal"]?.ToString() ?? "";
                 string mensaje = Resultado.Rows[0]["Mensaje"]?.ToString() ?? "Error desconocido.";
 
-                return (idUsuario, rol, responsable, mensaje);
+                return (idUsuario, rol, responsable,CargoSucursal, mensaje);
             }
             else
             {
-                return (0, "", "", "Error externo no se econtro ninguna fila en la tabla");
+                return (0, "","","", "Error externo no se econtro ninguna fila en la tabla");
             }
 
         }

@@ -80,7 +80,7 @@ namespace CapaDePresentacion.FrAuxiliares
             if (NumeroEstado == 4)
             {
                 string mensaje = "¿La habitacion " + TituloNumero.Text + " ya esta disponible?";
-                using (FrConfirmacion confirmar = new FrConfirmacion(mensaje))
+                using (FrConfirmacion confirmar = new FrConfirmacion(mensaje,0))
                 {
                     confirmar.ShowDialog();
                     if (confirmar.Resultado)

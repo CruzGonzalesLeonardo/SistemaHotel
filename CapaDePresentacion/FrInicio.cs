@@ -21,7 +21,10 @@ namespace CapaDePresentacion
         int panelAnchoMinimo = 40; // Ancho mínimo deseado
         int panelAnchoMaximo = 200; // Ancho máximo deseado
 
-        public FrInicio()
+        private string SucursalUser;
+
+
+        public FrInicio(int UserID, string NombreUsuario, string RolUsuario, string CargoSucursalUsuario)
         {
             InitializeComponent();
             var workingArea = Screen.PrimaryScreen.WorkingArea;
@@ -29,6 +32,10 @@ namespace CapaDePresentacion
 
             animacionTimer.Interval = 20; // Intervalo en ms
             animacionTimer.Tick += AnimarPanel;
+
+            lblUser.Text = "Bienvenido "+NombreUsuario + " con permisos de: " + RolUsuario + " y administrando el local : "+ CargoSucursalUsuario;
+
+            SucursalUser = CargoSucursalUsuario;
         }
 
         private void FrInicio_Load(object sender, EventArgs e)

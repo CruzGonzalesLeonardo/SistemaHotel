@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.PanelPadre = new System.Windows.Forms.Panel();
+            this.PanelTitulo = new System.Windows.Forms.Panel();
             this.lblMensaje = new System.Windows.Forms.Label();
             this.btnNo = new Sipaa.Framework.SButton();
             this.btnSi = new Sipaa.Framework.SButton();
-            this.PanelTitulo = new System.Windows.Forms.Panel();
+            this.btnOK = new Sipaa.Framework.SButton();
             this.PanelPadre.SuspendLayout();
             this.PanelTitulo.SuspendLayout();
             this.SuspendLayout();
@@ -41,6 +42,7 @@
             // 
             this.PanelPadre.BackColor = System.Drawing.Color.White;
             this.PanelPadre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PanelPadre.Controls.Add(this.btnOK);
             this.PanelPadre.Controls.Add(this.PanelTitulo);
             this.PanelPadre.Controls.Add(this.btnNo);
             this.PanelPadre.Controls.Add(this.btnSi);
@@ -49,6 +51,15 @@
             this.PanelPadre.Name = "PanelPadre";
             this.PanelPadre.Size = new System.Drawing.Size(306, 139);
             this.PanelPadre.TabIndex = 0;
+            // 
+            // PanelTitulo
+            // 
+            this.PanelTitulo.Controls.Add(this.lblMensaje);
+            this.PanelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelTitulo.Location = new System.Drawing.Point(0, 0);
+            this.PanelTitulo.Name = "PanelTitulo";
+            this.PanelTitulo.Size = new System.Drawing.Size(304, 93);
+            this.PanelTitulo.TabIndex = 7;
             // 
             // lblMensaje
             // 
@@ -96,14 +107,22 @@
             this.btnSi.UseVisualStyleBackColor = false;
             this.btnSi.Click += new System.EventHandler(this.btnSi_Click);
             // 
-            // PanelTitulo
+            // btnOK
             // 
-            this.PanelTitulo.Controls.Add(this.lblMensaje);
-            this.PanelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelTitulo.Location = new System.Drawing.Point(0, 0);
-            this.PanelTitulo.Name = "PanelTitulo";
-            this.PanelTitulo.Size = new System.Drawing.Size(304, 93);
-            this.PanelTitulo.TabIndex = 7;
+            this.btnOK.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(22)))), ((int)(((byte)(9)))));
+            this.btnOK.BorderRadius = 6;
+            this.btnOK.BorderSize = 1;
+            this.btnOK.FlatAppearance.BorderSize = 0;
+            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOK.Font = new System.Drawing.Font("Metropolis Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(22)))), ((int)(((byte)(9)))));
+            this.btnOK.Location = new System.Drawing.Point(94, 99);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(124, 32);
+            this.btnOK.TabIndex = 8;
+            this.btnOK.Text = "OK";
+            this.btnOK.UseVisualStyleBackColor = false;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // FrConfirmacion
             // 
@@ -131,5 +150,6 @@
         private Sipaa.Framework.SButton btnNo;
         private Sipaa.Framework.SButton btnSi;
         private System.Windows.Forms.Panel PanelTitulo;
+        private Sipaa.Framework.SButton btnOK;
     }
 }

@@ -17,7 +17,13 @@ namespace CapaDePresentacion
         private string fullTitle = "";
         private Timer fadeOutTimer = new Timer(); // Timer para manejar la transición de desvanecimiento
 
-        public FrProgreso(string Usuario)
+        private int IDUser = 0;
+        private string RolUser;
+        private string NombreUser;
+        private string cargo;
+
+
+        public FrProgreso(int iDUser, string Usuario, string rolUser,string CargoSucursalUser)
         {
             InitializeComponent();
 
@@ -33,6 +39,11 @@ namespace CapaDePresentacion
             // Configurar el Timer de desvanecimiento
             fadeOutTimer.Interval = 50; // Intervalo en milisegundos
             fadeOutTimer.Tick += FadeOutTimer_Tick;
+
+            IDUser = iDUser;
+            RolUser = rolUser;
+            NombreUser = Usuario;
+            cargo = CargoSucursalUser;
         }
 
         private void FrProgreso_Load(object sender, EventArgs e)
@@ -76,7 +87,7 @@ namespace CapaDePresentacion
         private void TransitionToOtherForm()
         {
             // Crear el siguiente formulario (FrInicio en este caso)
-            FrInicio siguienteForm = new FrInicio();
+            FrInicio siguienteForm = new FrInicio(IDUser,NombreUser, RolUser,cargo);
 
             // Mostrar el siguiente formulario
             siguienteForm.Opacity = 0; // Inicialmente invisible

@@ -38,7 +38,7 @@ namespace CapaDePresentacion
         }
         private void FrLogin_Load(object sender, EventArgs e)
         {
-
+            
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -72,7 +72,7 @@ namespace CapaDePresentacion
 
 
             CN_Usuario MiUsuario = new CN_Usuario();
-            var (idUsuario, rol, responsable, mensaje) = MiUsuario.Login(txtUsuario.Texts, txtContraseña.Texts);
+            var (idUsuario, rol, responsable,cargoSucursal, mensaje) = MiUsuario.Login(txtUsuario.Texts, txtContraseña.Texts);
 
             if(idUsuario == 0)
             {
@@ -99,13 +99,13 @@ namespace CapaDePresentacion
             }
 
             //MessageBox.Show("Bienvenido " + responsable+" "+rol, "Inicio de sesión exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            TransitionToOtherForm(responsable);
+            TransitionToOtherForm(idUsuario, responsable, rol,cargoSucursal);
 
         }
 
-        private void TransitionToOtherForm(string Nombre)
+        private void TransitionToOtherForm(int IDUsuario,string Nombre, string rol,string cargo)
         {
-            FrProgreso siguienteForm = new FrProgreso(Nombre);
+            FrProgreso siguienteForm = new FrProgreso(IDUsuario,Nombre,rol,cargo);
 
             for (double i = 1.0; i >= 0.0; i -= 0.05) // De 1 a 0, el cambio de opacidad
             {

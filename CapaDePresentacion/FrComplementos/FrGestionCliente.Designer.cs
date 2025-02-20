@@ -32,22 +32,21 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.Titulo = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.sTextBox2 = new Sipaa.Framework.STextBox();
+            this.txtCorreoCliente = new Sipaa.Framework.STextBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.sTextBox5 = new Sipaa.Framework.STextBox();
+            this.txtTelefonoCliente = new Sipaa.Framework.STextBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.sTextBox4 = new Sipaa.Framework.STextBox();
+            this.txtApellidoCliente = new Sipaa.Framework.STextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.sTextBox3 = new Sipaa.Framework.STextBox();
+            this.txtNombreCliente = new Sipaa.Framework.STextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.ListaTipoDocumeno = new System.Windows.Forms.ComboBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.sTextBox1 = new Sipaa.Framework.STextBox();
+            this.txtNumeroDocumento = new Sipaa.Framework.STextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -60,7 +59,11 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnCancelar = new Sipaa.Framework.SButton();
             this.btnConfirmar = new Sipaa.Framework.SButton();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.ListaEstado = new System.Windows.Forms.ComboBox();
+            this.labelTitulo = new System.Windows.Forms.Label();
+            this.PanelEstado = new Sipaa.Framework.SPanel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.labelResultado = new System.Windows.Forms.Label();
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel9.SuspendLayout();
@@ -74,6 +77,7 @@
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnClose
@@ -104,76 +108,45 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Russo One", 8F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(253, 0);
+            this.label2.Location = new System.Drawing.Point(325, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "N° DOCUMENTO";
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.panel10, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.panel9, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.panel8, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.panel7, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panel5, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 1, 4);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(21, 39);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.07407F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75.92593F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(501, 213);
-            this.tableLayoutPanel1.TabIndex = 5;
-            // 
             // panel10
             // 
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel10.Controls.Add(this.sTextBox2);
+            this.panel10.Controls.Add(this.txtCorreoCliente);
             this.panel10.Controls.Add(this.pictureBox6);
-            this.panel10.Location = new System.Drawing.Point(253, 164);
+            this.panel10.Location = new System.Drawing.Point(328, 220);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(230, 32);
             this.panel10.TabIndex = 14;
             // 
-            // sTextBox2
+            // txtCorreoCliente
             // 
-            this.sTextBox2.AutoSize = true;
-            this.sTextBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.sTextBox2.BorderColor = System.Drawing.Color.Transparent;
-            this.sTextBox2.BorderFocusColor = System.Drawing.Color.Transparent;
-            this.sTextBox2.BorderRadius = 0;
-            this.sTextBox2.BorderSize = 1;
-            this.sTextBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.sTextBox2.Location = new System.Drawing.Point(34, 0);
-            this.sTextBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.sTextBox2.Multiline = false;
-            this.sTextBox2.Name = "sTextBox2";
-            this.sTextBox2.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.sTextBox2.PasswordChar = false;
-            this.sTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.sTextBox2.PlaceholderText = "Ingrese el correo electronico";
-            this.sTextBox2.Size = new System.Drawing.Size(194, 31);
-            this.sTextBox2.TabIndex = 2;
-            this.sTextBox2.Texts = "";
-            this.sTextBox2.UnderlinedStyle = false;
+            this.txtCorreoCliente.AutoSize = true;
+            this.txtCorreoCliente.BackColor = System.Drawing.SystemColors.Window;
+            this.txtCorreoCliente.BorderColor = System.Drawing.Color.Transparent;
+            this.txtCorreoCliente.BorderFocusColor = System.Drawing.Color.Transparent;
+            this.txtCorreoCliente.BorderRadius = 0;
+            this.txtCorreoCliente.BorderSize = 1;
+            this.txtCorreoCliente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtCorreoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCorreoCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtCorreoCliente.Location = new System.Drawing.Point(34, 0);
+            this.txtCorreoCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCorreoCliente.Multiline = false;
+            this.txtCorreoCliente.Name = "txtCorreoCliente";
+            this.txtCorreoCliente.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtCorreoCliente.PasswordChar = false;
+            this.txtCorreoCliente.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtCorreoCliente.PlaceholderText = "";
+            this.txtCorreoCliente.Size = new System.Drawing.Size(194, 31);
+            this.txtCorreoCliente.TabIndex = 2;
+            this.txtCorreoCliente.Texts = "";
+            this.txtCorreoCliente.UnderlinedStyle = false;
             // 
             // pictureBox6
             // 
@@ -189,36 +162,36 @@
             // panel9
             // 
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel9.Controls.Add(this.sTextBox5);
+            this.panel9.Controls.Add(this.txtTelefonoCliente);
             this.panel9.Controls.Add(this.pictureBox5);
-            this.panel9.Location = new System.Drawing.Point(3, 164);
+            this.panel9.Location = new System.Drawing.Point(47, 221);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(230, 32);
             this.panel9.TabIndex = 13;
             // 
-            // sTextBox5
+            // txtTelefonoCliente
             // 
-            this.sTextBox5.AutoSize = true;
-            this.sTextBox5.BackColor = System.Drawing.SystemColors.Window;
-            this.sTextBox5.BorderColor = System.Drawing.Color.Transparent;
-            this.sTextBox5.BorderFocusColor = System.Drawing.Color.Transparent;
-            this.sTextBox5.BorderRadius = 0;
-            this.sTextBox5.BorderSize = 1;
-            this.sTextBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sTextBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sTextBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.sTextBox5.Location = new System.Drawing.Point(34, 0);
-            this.sTextBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.sTextBox5.Multiline = false;
-            this.sTextBox5.Name = "sTextBox5";
-            this.sTextBox5.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.sTextBox5.PasswordChar = false;
-            this.sTextBox5.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.sTextBox5.PlaceholderText = "Ingrese el N° de Celular";
-            this.sTextBox5.Size = new System.Drawing.Size(194, 31);
-            this.sTextBox5.TabIndex = 3;
-            this.sTextBox5.Texts = "";
-            this.sTextBox5.UnderlinedStyle = false;
+            this.txtTelefonoCliente.AutoSize = true;
+            this.txtTelefonoCliente.BackColor = System.Drawing.SystemColors.Window;
+            this.txtTelefonoCliente.BorderColor = System.Drawing.Color.Transparent;
+            this.txtTelefonoCliente.BorderFocusColor = System.Drawing.Color.Transparent;
+            this.txtTelefonoCliente.BorderRadius = 0;
+            this.txtTelefonoCliente.BorderSize = 1;
+            this.txtTelefonoCliente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtTelefonoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefonoCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtTelefonoCliente.Location = new System.Drawing.Point(34, 0);
+            this.txtTelefonoCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTelefonoCliente.Multiline = false;
+            this.txtTelefonoCliente.Name = "txtTelefonoCliente";
+            this.txtTelefonoCliente.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtTelefonoCliente.PasswordChar = false;
+            this.txtTelefonoCliente.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtTelefonoCliente.PlaceholderText = "";
+            this.txtTelefonoCliente.Size = new System.Drawing.Size(194, 31);
+            this.txtTelefonoCliente.TabIndex = 3;
+            this.txtTelefonoCliente.Texts = "";
+            this.txtTelefonoCliente.UnderlinedStyle = false;
             // 
             // pictureBox5
             // 
@@ -234,36 +207,36 @@
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel8.Controls.Add(this.sTextBox4);
+            this.panel8.Controls.Add(this.txtApellidoCliente);
             this.panel8.Controls.Add(this.pictureBox4);
-            this.panel8.Location = new System.Drawing.Point(253, 89);
+            this.panel8.Location = new System.Drawing.Point(329, 145);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(230, 32);
             this.panel8.TabIndex = 12;
             // 
-            // sTextBox4
+            // txtApellidoCliente
             // 
-            this.sTextBox4.AutoSize = true;
-            this.sTextBox4.BackColor = System.Drawing.SystemColors.Window;
-            this.sTextBox4.BorderColor = System.Drawing.Color.Transparent;
-            this.sTextBox4.BorderFocusColor = System.Drawing.Color.Transparent;
-            this.sTextBox4.BorderRadius = 0;
-            this.sTextBox4.BorderSize = 1;
-            this.sTextBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sTextBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.sTextBox4.Location = new System.Drawing.Point(34, 0);
-            this.sTextBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.sTextBox4.Multiline = false;
-            this.sTextBox4.Name = "sTextBox4";
-            this.sTextBox4.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.sTextBox4.PasswordChar = false;
-            this.sTextBox4.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.sTextBox4.PlaceholderText = "Ingrese el apellido del Cliente";
-            this.sTextBox4.Size = new System.Drawing.Size(194, 31);
-            this.sTextBox4.TabIndex = 3;
-            this.sTextBox4.Texts = "";
-            this.sTextBox4.UnderlinedStyle = false;
+            this.txtApellidoCliente.AutoSize = true;
+            this.txtApellidoCliente.BackColor = System.Drawing.SystemColors.Window;
+            this.txtApellidoCliente.BorderColor = System.Drawing.Color.Transparent;
+            this.txtApellidoCliente.BorderFocusColor = System.Drawing.Color.Transparent;
+            this.txtApellidoCliente.BorderRadius = 0;
+            this.txtApellidoCliente.BorderSize = 1;
+            this.txtApellidoCliente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtApellidoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellidoCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtApellidoCliente.Location = new System.Drawing.Point(34, 0);
+            this.txtApellidoCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.txtApellidoCliente.Multiline = false;
+            this.txtApellidoCliente.Name = "txtApellidoCliente";
+            this.txtApellidoCliente.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtApellidoCliente.PasswordChar = false;
+            this.txtApellidoCliente.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtApellidoCliente.PlaceholderText = "";
+            this.txtApellidoCliente.Size = new System.Drawing.Size(194, 31);
+            this.txtApellidoCliente.TabIndex = 3;
+            this.txtApellidoCliente.Texts = "";
+            this.txtApellidoCliente.UnderlinedStyle = false;
             // 
             // pictureBox4
             // 
@@ -279,36 +252,36 @@
             // panel7
             // 
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.sTextBox3);
+            this.panel7.Controls.Add(this.txtNombreCliente);
             this.panel7.Controls.Add(this.pictureBox3);
-            this.panel7.Location = new System.Drawing.Point(3, 89);
+            this.panel7.Location = new System.Drawing.Point(46, 146);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(230, 32);
             this.panel7.TabIndex = 11;
             // 
-            // sTextBox3
+            // txtNombreCliente
             // 
-            this.sTextBox3.AutoSize = true;
-            this.sTextBox3.BackColor = System.Drawing.SystemColors.Window;
-            this.sTextBox3.BorderColor = System.Drawing.Color.Transparent;
-            this.sTextBox3.BorderFocusColor = System.Drawing.Color.Transparent;
-            this.sTextBox3.BorderRadius = 0;
-            this.sTextBox3.BorderSize = 1;
-            this.sTextBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.sTextBox3.Location = new System.Drawing.Point(34, 0);
-            this.sTextBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.sTextBox3.Multiline = false;
-            this.sTextBox3.Name = "sTextBox3";
-            this.sTextBox3.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.sTextBox3.PasswordChar = false;
-            this.sTextBox3.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.sTextBox3.PlaceholderText = "Ingrese el nombre del Cliente";
-            this.sTextBox3.Size = new System.Drawing.Size(194, 31);
-            this.sTextBox3.TabIndex = 3;
-            this.sTextBox3.Texts = "";
-            this.sTextBox3.UnderlinedStyle = false;
+            this.txtNombreCliente.AutoSize = true;
+            this.txtNombreCliente.BackColor = System.Drawing.SystemColors.Window;
+            this.txtNombreCliente.BorderColor = System.Drawing.Color.Transparent;
+            this.txtNombreCliente.BorderFocusColor = System.Drawing.Color.Transparent;
+            this.txtNombreCliente.BorderRadius = 0;
+            this.txtNombreCliente.BorderSize = 1;
+            this.txtNombreCliente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtNombreCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtNombreCliente.Location = new System.Drawing.Point(34, 0);
+            this.txtNombreCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombreCliente.Multiline = false;
+            this.txtNombreCliente.Name = "txtNombreCliente";
+            this.txtNombreCliente.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtNombreCliente.PasswordChar = false;
+            this.txtNombreCliente.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtNombreCliente.PlaceholderText = "";
+            this.txtNombreCliente.Size = new System.Drawing.Size(194, 31);
+            this.txtNombreCliente.TabIndex = 3;
+            this.txtNombreCliente.Texts = "";
+            this.txtNombreCliente.UnderlinedStyle = false;
             // 
             // pictureBox3
             // 
@@ -321,52 +294,55 @@
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
             // 
-            // comboBox1
+            // ListaTipoDocumeno
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.ListaTipoDocumeno.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.ListaTipoDocumeno.FormattingEnabled = true;
+            this.ListaTipoDocumeno.Items.AddRange(new object[] {
             "DNI",
             "RUC",
             "PASAPORTE"});
-            this.comboBox1.Location = new System.Drawing.Point(3, 19);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(230, 28);
-            this.comboBox1.TabIndex = 0;
+            this.ListaTipoDocumeno.Location = new System.Drawing.Point(46, 71);
+            this.ListaTipoDocumeno.Name = "ListaTipoDocumeno";
+            this.ListaTipoDocumeno.Size = new System.Drawing.Size(230, 28);
+            this.ListaTipoDocumeno.TabIndex = 0;
             // 
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.sTextBox1);
+            this.panel5.Controls.Add(this.txtNumeroDocumento);
             this.panel5.Controls.Add(this.pictureBox1);
-            this.panel5.Location = new System.Drawing.Point(253, 19);
+            this.panel5.Location = new System.Drawing.Point(328, 67);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(231, 32);
             this.panel5.TabIndex = 0;
             // 
-            // sTextBox1
+            // txtNumeroDocumento
             // 
-            this.sTextBox1.AutoSize = true;
-            this.sTextBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.sTextBox1.BorderColor = System.Drawing.Color.Transparent;
-            this.sTextBox1.BorderFocusColor = System.Drawing.Color.Transparent;
-            this.sTextBox1.BorderRadius = 0;
-            this.sTextBox1.BorderSize = 1;
-            this.sTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.sTextBox1.Location = new System.Drawing.Point(34, 0);
-            this.sTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.sTextBox1.Multiline = false;
-            this.sTextBox1.Name = "sTextBox1";
-            this.sTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.sTextBox1.PasswordChar = false;
-            this.sTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.sTextBox1.PlaceholderText = "Ingrese el nombre del Cliente";
-            this.sTextBox1.Size = new System.Drawing.Size(195, 31);
-            this.sTextBox1.TabIndex = 4;
-            this.sTextBox1.Texts = "";
-            this.sTextBox1.UnderlinedStyle = false;
+            this.txtNumeroDocumento.AutoSize = true;
+            this.txtNumeroDocumento.BackColor = System.Drawing.SystemColors.Window;
+            this.txtNumeroDocumento.BorderColor = System.Drawing.Color.Transparent;
+            this.txtNumeroDocumento.BorderFocusColor = System.Drawing.Color.Transparent;
+            this.txtNumeroDocumento.BorderRadius = 0;
+            this.txtNumeroDocumento.BorderSize = 1;
+            this.txtNumeroDocumento.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNumeroDocumento.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtNumeroDocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumeroDocumento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtNumeroDocumento.Location = new System.Drawing.Point(34, 0);
+            this.txtNumeroDocumento.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNumeroDocumento.Multiline = false;
+            this.txtNumeroDocumento.Name = "txtNumeroDocumento";
+            this.txtNumeroDocumento.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtNumeroDocumento.PasswordChar = false;
+            this.txtNumeroDocumento.PlaceholderColor = System.Drawing.Color.DimGray;
+            this.txtNumeroDocumento.PlaceholderText = "";
+            this.txtNumeroDocumento.Size = new System.Drawing.Size(195, 31);
+            this.txtNumeroDocumento.TabIndex = 4;
+            this.txtNumeroDocumento.TabStop = false;
+            this.txtNumeroDocumento.Texts = "";
+            this.txtNumeroDocumento.UnderlinedStyle = false;
+            this.txtNumeroDocumento.Leave += new System.EventHandler(this.txtNumeroDocumento_Leave);
             // 
             // pictureBox1
             // 
@@ -384,7 +360,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Russo One", 8F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(253, 66);
+            this.label6.Location = new System.Drawing.Point(325, 125);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(81, 13);
             this.label6.TabIndex = 8;
@@ -395,7 +371,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Russo One", 8F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(3, 66);
+            this.label5.Location = new System.Drawing.Point(43, 124);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 13);
             this.label5.TabIndex = 7;
@@ -406,7 +382,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Russo One", 8F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Location = new System.Drawing.Point(43, 51);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(123, 13);
             this.label3.TabIndex = 5;
@@ -417,7 +393,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Russo One", 8F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(3, 140);
+            this.label1.Location = new System.Drawing.Point(43, 205);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 13);
             this.label1.TabIndex = 9;
@@ -428,7 +404,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Russo One", 8F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(253, 140);
+            this.label4.Location = new System.Drawing.Point(325, 205);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 13);
             this.label4.TabIndex = 10;
@@ -439,16 +415,16 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(21, 301);
+            this.panel1.Size = new System.Drawing.Size(21, 390);
             this.panel1.TabIndex = 6;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.btnClose);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(522, 0);
+            this.panel2.Location = new System.Drawing.Point(578, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(21, 301);
+            this.panel2.Size = new System.Drawing.Size(21, 390);
             this.panel2.TabIndex = 7;
             // 
             // panel3
@@ -457,7 +433,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(21, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(501, 39);
+            this.panel3.Size = new System.Drawing.Size(557, 39);
             this.panel3.TabIndex = 8;
             // 
             // panel4
@@ -465,9 +441,9 @@
             this.panel4.Controls.Add(this.btnCancelar);
             this.panel4.Controls.Add(this.btnConfirmar);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(21, 252);
+            this.panel4.Location = new System.Drawing.Point(21, 341);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(501, 49);
+            this.panel4.Size = new System.Drawing.Size(557, 49);
             this.panel4.TabIndex = 9;
             // 
             // btnCancelar
@@ -480,7 +456,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Metropolis Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.btnCancelar.Location = new System.Drawing.Point(250, 5);
+            this.btnCancelar.Location = new System.Drawing.Point(304, 5);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(118, 32);
             this.btnCancelar.TabIndex = 5;
@@ -498,7 +474,7 @@
             this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmar.Font = new System.Drawing.Font("Metropolis Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmar.Location = new System.Drawing.Point(377, 5);
+            this.btnConfirmar.Location = new System.Drawing.Point(435, 5);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(118, 32);
             this.btnConfirmar.TabIndex = 6;
@@ -506,23 +482,96 @@
             this.btnConfirmar.UseVisualStyleBackColor = false;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
+            // ListaEstado
+            // 
+            this.ListaEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.ListaEstado.ForeColor = System.Drawing.Color.Black;
+            this.ListaEstado.FormattingEnabled = true;
+            this.ListaEstado.Items.AddRange(new object[] {
+            "ACTIVO",
+            "INACTIVO",
+            "NO DESEADO"});
+            this.ListaEstado.Location = new System.Drawing.Point(205, 293);
+            this.ListaEstado.Name = "ListaEstado";
+            this.ListaEstado.Size = new System.Drawing.Size(182, 28);
+            this.ListaEstado.TabIndex = 15;
+            this.ListaEstado.SelectedIndexChanged += new System.EventHandler(this.ListaEstado_SelectedIndexChanged);
+            // 
+            // labelTitulo
+            // 
+            this.labelTitulo.AutoSize = true;
+            this.labelTitulo.Font = new System.Drawing.Font("Russo One", 8F, System.Drawing.FontStyle.Bold);
+            this.labelTitulo.ForeColor = System.Drawing.Color.Black;
+            this.labelTitulo.Location = new System.Drawing.Point(270, 277);
+            this.labelTitulo.Name = "labelTitulo";
+            this.labelTitulo.Size = new System.Drawing.Size(58, 13);
+            this.labelTitulo.TabIndex = 16;
+            this.labelTitulo.Text = "ESTADO";
+            // 
+            // PanelEstado
+            // 
+            this.PanelEstado.BackColor = System.Drawing.Color.White;
+            this.PanelEstado.BorderColor = System.Drawing.Color.Black;
+            this.PanelEstado.BorderRadius = 6;
+            this.PanelEstado.BorderSize = 1;
+            this.PanelEstado.ForeColor = System.Drawing.Color.White;
+            this.PanelEstado.Location = new System.Drawing.Point(393, 293);
+            this.PanelEstado.Name = "PanelEstado";
+            this.PanelEstado.Size = new System.Drawing.Size(30, 28);
+            this.PanelEstado.TabIndex = 17;
+            // 
+            // panel6
+            // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.labelResultado);
+            this.panel6.Controls.Add(this.label3);
+            this.panel6.Controls.Add(this.panel4);
+            this.panel6.Controls.Add(this.PanelEstado);
+            this.panel6.Controls.Add(this.panel3);
+            this.panel6.Controls.Add(this.label2);
+            this.panel6.Controls.Add(this.panel2);
+            this.panel6.Controls.Add(this.labelTitulo);
+            this.panel6.Controls.Add(this.panel1);
+            this.panel6.Controls.Add(this.ListaEstado);
+            this.panel6.Controls.Add(this.label4);
+            this.panel6.Controls.Add(this.label1);
+            this.panel6.Controls.Add(this.panel10);
+            this.panel6.Controls.Add(this.ListaTipoDocumeno);
+            this.panel6.Controls.Add(this.panel9);
+            this.panel6.Controls.Add(this.label5);
+            this.panel6.Controls.Add(this.panel5);
+            this.panel6.Controls.Add(this.panel8);
+            this.panel6.Controls.Add(this.label6);
+            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(601, 392);
+            this.panel6.TabIndex = 18;
+            // 
+            // labelResultado
+            // 
+            this.labelResultado.AutoSize = true;
+            this.labelResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelResultado.ForeColor = System.Drawing.Color.Red;
+            this.labelResultado.Location = new System.Drawing.Point(330, 102);
+            this.labelResultado.Name = "labelResultado";
+            this.labelResultado.Size = new System.Drawing.Size(54, 13);
+            this.labelResultado.TabIndex = 18;
+            this.labelResultado.Text = "Mensaje";
+            // 
             // FrGestionCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(543, 301);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ClientSize = new System.Drawing.Size(601, 392);
+            this.Controls.Add(this.panel6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrGestionCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrGestionCliente";
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.Text = ".2";
+            this.Load += new System.EventHandler(this.FrGestionCliente_Load);
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -542,6 +591,8 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -551,7 +602,6 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label Titulo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -560,7 +610,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox ListaTipoDocumeno;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel10;
@@ -574,10 +624,15 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private Sipaa.Framework.SButton btnCancelar;
         private Sipaa.Framework.SButton btnConfirmar;
-        private Sipaa.Framework.STextBox sTextBox2;
-        private Sipaa.Framework.STextBox sTextBox5;
-        private Sipaa.Framework.STextBox sTextBox4;
-        private Sipaa.Framework.STextBox sTextBox3;
-        private Sipaa.Framework.STextBox sTextBox1;
+        private Sipaa.Framework.STextBox txtCorreoCliente;
+        private Sipaa.Framework.STextBox txtTelefonoCliente;
+        private Sipaa.Framework.STextBox txtApellidoCliente;
+        private Sipaa.Framework.STextBox txtNombreCliente;
+        private Sipaa.Framework.STextBox txtNumeroDocumento;
+        private System.Windows.Forms.ComboBox ListaEstado;
+        private System.Windows.Forms.Label labelTitulo;
+        private Sipaa.Framework.SPanel PanelEstado;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label labelResultado;
     }
 }

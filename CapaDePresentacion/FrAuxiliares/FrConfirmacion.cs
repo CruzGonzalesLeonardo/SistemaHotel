@@ -16,16 +16,26 @@ namespace CapaDePresentacion.FrAuxiliares
         public bool Resultado { get; private set; } = false;
 
         private string Mensaje;
-        public FrConfirmacion(string mensaje)
+
+        public FrConfirmacion(string mensaje, int Confirmacion_Alerta)
         {
             InitializeComponent();
             Mensaje = mensaje;
 
             MovForm.EnableFormDrag(this, this);
-            MovForm.EnableFormDrag(this, PanelPadre); 
+            MovForm.EnableFormDrag(this, PanelPadre);
             MovForm.EnableFormDrag(this, PanelTitulo);
             MovForm.EnableFormDrag(this, lblMensaje);
 
+            if(Confirmacion_Alerta == 0)
+            {
+                btnOK.Visible = false;
+            }
+            else if (Confirmacion_Alerta == 1)
+            {
+                btnSi.Visible = false;
+                btnNo.Visible = false;
+            }
 
         }
 
@@ -76,6 +86,11 @@ namespace CapaDePresentacion.FrAuxiliares
         private void btnNo_Click(object sender, EventArgs e)
         {
             Resultado = false;
+            this.Close();
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }
